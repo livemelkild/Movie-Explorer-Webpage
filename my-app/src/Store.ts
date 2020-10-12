@@ -1,4 +1,13 @@
-import {createStore} from 'redux';
-import rootReducer from "./reducer/RootReducer";
+import {createStore, applyMiddleware} from 'redux';
+import RootReducer from "./reducer/RootReducer";
+import {composeWithDevTools} from "redux-devtools-extension";
+import thunk from "redux-thunk";
 
-const store = createStore(rootReducer);
+//spørsmål
+//hva er tunk? hvorfor bruke applyMiddleware ? 
+const Store = createStore(RootReducer, composeWithDevTools(applyMiddleware(thunk)));
+
+//tells your the type of the return type "ReturnType"
+export type RootStore = ReturnType<typeof RootReducer>
+
+export default Store
