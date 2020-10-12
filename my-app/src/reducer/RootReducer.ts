@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import pokemonReducer from "./MovieReducer";
+import movieReducer from "./MovieReducer";
 
 const RootReducer = combineReducers({
-  pokemon: pokemonReducer
+  movie: movieReducer
 });
 
 export default RootReducer;

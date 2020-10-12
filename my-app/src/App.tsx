@@ -8,24 +8,24 @@ import {GetMovie} from "./Actions/MovieActions"
 
 function App() {
   const dispatch = useDispatch();
-  const [pokemonName, setPokemonName] = useState("");
-  const pokemonState = useSelector((state: RootStore) => state.pokemon);
+  const [movieName, setMovieName] = useState("");
+  const movieState = useSelector((state: RootStore) => state.movie);
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => setPokemonName(event.target.value);
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => setMovieName(event.target.value);
 
-  const handleSubmit = () => dispatch(GetMovie(pokemonName));
+  const handleSubmit = () => dispatch(GetMovie(movieName));
 
-  console.log("pokemonState:", pokemonState);
+  console.log("pokemonState:", movieState);
 
   return (
     <div className="App">
       <input type="text" onChange={handleChange}/>
       <button onClick={handleSubmit}>Search</button>
-      {pokemonState.pokemon && (
+      {movieState.movie && (
         //show the data
         <div>
-          <img src={pokemonState.pokemon.sprites.front_default} alt=""/>
-          {pokemonState.pokemon.abilities.map(ability => {
+          <img src={movieState.movie.sprites.front_default} alt=""/>
+          {movieState.movie.abilities.map(ability => {
             return <p>{ability.ability.name}</p>
           })}
         </div>
