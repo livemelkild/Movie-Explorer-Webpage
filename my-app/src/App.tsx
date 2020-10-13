@@ -3,33 +3,22 @@ import React, {useState} from 'react';
 import {useSelector, useDispatch} from "react-redux";
 import {RootStore} from "./Store";
 //import the stuff for the onClick
-import {GetMovie} from "./Actions/MovieActions"
+import {GetPokemon} from "./Actions/PokemonActions"
 
 
 function App() {
   const dispatch = useDispatch();
-  const [movieName, setMovieName] = useState("");
-  const movieState = useSelector((state: RootStore) => state.movie);
+  const [pokemonName, setPokemonName] = useState("");
+  const pokemonState = useSelector((state: RootStore) => state.pokemon);
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => setMovieName(event.target.value);
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => setPokemonName(event.target.value);
 
-  const handleSubmit = () => dispatch(GetMovie(movieName));
-
-  console.log("pokemonState:", movieState);
+  const handleSubmit = () => dispatch(GetPokemon(pokemonName));
 
   return (
     <div className="App">
       <input type="text" onChange={handleChange}/>
       <button onClick={handleSubmit}>Search</button>
-      {movieState.movie && (
-        //show the data
-        <div>
-          <img src={movieState.movie.sprites.front_default} alt=""/>
-          {movieState.movie.abilities.map(ability => {
-            return <p>{ability.ability.name}</p>
-          })}
-        </div>
-      )}
     </div>
   );
 }
