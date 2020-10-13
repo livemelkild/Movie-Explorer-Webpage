@@ -1,9 +1,7 @@
 import { combineReducers } from 'redux';
-import pokemonReducer from "./PokemonReducer";
 
 const RootReducer = combineReducers({
-  Search_character: characterReducer
-
+  //legge inn de ulike reducerne man lager
 });
 
 export default RootReducer;
