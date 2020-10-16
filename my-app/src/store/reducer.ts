@@ -17,11 +17,10 @@ const initialState: CharacterState = {
   ],
 }
 
-const reducer = (
-  state: CharacterState = initialState,
-  action: CharacterAction
-): CharacterState => {
+const reducer = ( state: CharacterState = initialState, action: CharacterAction): CharacterState => {
   switch (action.type) {
+
+    
     case actionTypes.ADD_CHARACTER:
       const newCharacter: ICharacter = {
         id: Math.random(), // her må vi hente inn en id
@@ -32,6 +31,7 @@ const reducer = (
         ...state,
         characters: state.characters.concat(newCharacter),
       }
+
     case actionTypes.REMOVE_CHARACTER:
       const updatedCharacters: ICharacter[] = state.characters.filter(
         character => character.id !== action.character.id
@@ -40,6 +40,7 @@ const reducer = (
         ...state,
         characters: updatedCharacters,
       }
+
   }
   return state
 }

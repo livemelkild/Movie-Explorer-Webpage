@@ -11,6 +11,7 @@ interface ICharacter {
 
 type CharacterState = {
   characters: ICharacter[]
+
 }
 
 type CharacterAction = {
@@ -19,3 +20,32 @@ type CharacterAction = {
 }
 
 type DispatchType = (args: CharacterAction) => CharacterAction
+
+type StringState = {
+  
+}
+
+interface DefaultStateI {
+  loading: boolean,
+  pokemon?: PokemonType
+}
+
+const defaultState: DefaultStateI = {
+  loading: false
+};
+
+
+type CharacterType = {
+
+  _id: String;
+  name: String;
+  gender: String;
+  house: String;
+  dateOfBirth?: String;
+  yearOfBirth?: Number;
+  actor: String;
+  image?: String;
+
+}
+
+
