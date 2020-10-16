@@ -14,4 +14,5 @@ const character = new Schema({
     actor: { type: String },
     image: { type: String },
 });
+//skal referer til collection som vi lagde i databsen
 exports.default = mongoose.model('characters', character);

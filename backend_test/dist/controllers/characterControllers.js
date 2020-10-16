@@ -8,20 +8,20 @@ class CharacterController {
         this.character_service = new service_2.default();
     }
     get_character(req, res) {
-        if (req.params.id) {
-            const user_filter = { _id: req.params.id };
-            this.character_service.filterCharacter(user_filter, (err, user_data) => {
-                if (err) {
-                    service_1.mongoError(err, res);
-                }
-                else {
-                    service_1.successResponse('get user successfull', user_data, res);
-                }
-            });
-        }
-        else {
-            service_1.insufficientParameters(res);
-        }
+        // if (req.params.id) {
+        const user_filter = { _id: req.params.id };
+        this.character_service.filterCharacter({}, (err, user_data) => {
+            if (err) {
+                service_1.mongoError(err, res);
+            }
+            else {
+                service_1.successResponse('get user successfull', user_data, res);
+            }
+        });
+        /*   } else {
+               insufficientParameters(res);
+           }
+           */
     }
     get_house(req, res) {
         if (req.params.house) {

@@ -9,7 +9,7 @@ export default class CharacterService {
     }
 
     public filterCharacter(query: any, callback: any) {
-        characters.findOne(query, callback);
+        characters.find(query, callback);
     }
 
     public updateCharacter(user_params: ICharacter, callback: any) {

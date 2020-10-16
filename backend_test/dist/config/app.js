@@ -26,9 +26,8 @@ class App {
         this.app.use(bodyParser.urlencoded({ extended: false }));
     }
     mongoSetup() {
-        if (mongoose.connect(this.mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false })) {
-            console.log("Database is connected!");
-        }
+        mongoose.connect(this.mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false });
+        console.log("Database is connected!");
     }
 }
 exports.default = new App().app;

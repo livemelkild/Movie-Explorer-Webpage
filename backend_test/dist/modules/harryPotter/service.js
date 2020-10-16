@@ -7,7 +7,7 @@ class CharacterService {
         _session.save(callback);
     }
     filterCharacter(query, callback) {
-        schema_1.default.findOne(query, callback);
+        schema_1.default.find(query, callback);
     }
     updateCharacter(user_params, callback) {
         const query = { id: user_params._id };

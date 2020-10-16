@@ -10,18 +10,19 @@ export class CharacterController{
     private character_service: CharacterService = new CharacterService();
 
     public get_character(req: Request, res: Response) {
-        if (req.params.id) {
+       // if (req.params.id) {
             const user_filter = { _id: req.params.id };
-            this.character_service.filterCharacter(user_filter, (err: any, user_data: ICharacter) => {
+            this.character_service.filterCharacter({}, (err: any, user_data: ICharacter) => {
                 if (err) {
                     mongoError(err, res);
                 } else {
                     successResponse('get user successfull', user_data, res);
                 }
             });
-        } else {
+     /*   } else {
             insufficientParameters(res);
         }
+        */
     }
 
     public get_house(req: Request, res: Response) {

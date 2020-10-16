@@ -17,5 +17,5 @@ const character = new Schema(
         image: {type: String},
     //    modification_notes: [ModificationNote]
 });
-
+//skal referer til collection som vi lagde i databsen
 export default mongoose.model('characters', character);

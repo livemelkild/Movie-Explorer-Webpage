@@ -8,7 +8,7 @@ export class CharacterRoutes {
 
     public route(app: Application) {
 
-        app.get("/api/character/:id", (req: Request, res: Response) => {
+        app.get("/api/character", (req: Request, res: Response) => {
             this.character_controller.get_character(req, res);
         })
 
