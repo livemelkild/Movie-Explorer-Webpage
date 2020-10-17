@@ -24,11 +24,12 @@ import { Provider } from "react-redux"
 import thunk from "redux-thunk"
 
 import App from "./App"
-import reducer from "./store/reducer"
+//import reducer from "./store/reducer"
+import { searchReducer } from "./store/Ducks/searchDuck"
 
-const store: Store<CharacterState, CharacterAction> & {
+const store : Store< { payload: string }> & { dispatch: DispatchType}/*: Store<CharacterState, CharacterAction> & {
   dispatch: DispatchType
-} = createStore(reducer, applyMiddleware(thunk))
+}*/ = createStore(searchReducer, applyMiddleware(thunk))
 
 const rootElement = document.getElementById("root")
 render(

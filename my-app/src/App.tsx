@@ -14,6 +14,7 @@ export default App;
 */
 
 import * as React from "react"
+/*
 import { useSelector, shallowEqual, useDispatch } from "react-redux"
 //import "./styles.css"
 
@@ -48,6 +49,15 @@ const App: React.FC = () => {
       ))}
     </main>
   )
+}
+*/
+import Searchbar from "./components/searchBar"
+const App: React.FC = () => {
+
+  return(
+    <Searchbar />
+  )
+
 }
 
 export default App
