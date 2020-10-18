@@ -51,7 +51,7 @@ const App: React.FC = () => {
   )
 }
 */
-import Searchbar from "./components/searchBar"
+import Searchbar from "./Components/Searchbar/searchBar"
 const App: React.FC = () => {
 
   return(
