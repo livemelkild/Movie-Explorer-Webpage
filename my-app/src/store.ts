@@ -1,4 +1,5 @@
-import { createStore, combineReducers, Store } from "redux";
+import { createStore, Store } from "redux";
+import rootReducer from "./RootReducer";
 
 export type Character = {
     id: number;
