@@ -1,5 +1,5 @@
 import { createStore, Store } from "redux";
-import rootReducer from "./RootReducer";
+import rootReducer from "./Reducer/RootReducer";
 
 export type Character = {
     id: number;

@@ -10,6 +10,11 @@ type SearchProps = {
 
 export const SearchBar: React.FC<SearchProps> = ({ search }) => {
     const dispatch: Dispatch<any> = useDisptach();
+
+    const checkArtist = React.useCallback(
+        (search: string) => dispatch(searchArtist(search)),
+        [dispatch, searchArtist]
+      )
     return (
         <div>
             
