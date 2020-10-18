@@ -8,5 +8,13 @@ export function searchArtist(search: string) {
 
 }
 
-type Actions = ReturnType <typeof searchArtist>
+/*export const searchValue = (search) => {
+    return {
+        type: search
+        payload: search
+    }
+}^*/
 
+export type Actions = ReturnType <typeof searchArtist>
+
+export default searchArtist; 
