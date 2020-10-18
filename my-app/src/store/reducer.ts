@@ -20,7 +20,6 @@ const initialState: CharacterState = {
 const reducer = ( state: CharacterState = initialState, action: CharacterAction): CharacterState => {
   switch (action.type) {
 
-    
     case actionTypes.ADD_CHARACTER:
       const newCharacter: ICharacter = {
         id: Math.random(), // her må vi hente inn en id
@@ -28,7 +27,7 @@ const reducer = ( state: CharacterState = initialState, action: CharacterAction)
         body: action.character.body,
       }
       return {
-        ...state,
+        ...state, // hva betyr ...state?
         characters: state.characters.concat(newCharacter),
       }
 
