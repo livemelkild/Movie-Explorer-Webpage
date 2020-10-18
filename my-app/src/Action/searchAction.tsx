@@ -1,6 +1,6 @@
-export const SEARCH_ARTIST = "SEARCH_ARTIST"
+export const SEARCH_ARTIST = "SEARCH_ARTIST";
 
-export function searchArtist(search: string) {
+ function searchArtist(search: string) {
     return {
         type: 'SEARCH_ARTIST', 
         payload: search 
@@ -15,6 +15,9 @@ export function searchArtist(search: string) {
     }
 }^*/
 
-export type Actions = ReturnType <typeof searchArtist>
 
-export default searchArtist; 
+
+export default searchArtist;
+
+export type Actions = ReturnType <typeof searchArtist>
+ 

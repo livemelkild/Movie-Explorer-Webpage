@@ -1,14 +1,14 @@
-import Actions from '../Action/searchAction'; 
+import {Actions} from '../Action/searchAction'; 
 
 const initialState = { 
     search: ''
 }
 
-export function searchReducer(state: initialState, action:Actions) {
+export function searchReducer(state: string, action: Actions) {
     switch(action.type) {
         case 'SEARCH_ARTIST' :
             return {
-                ...state,
+                //...state,
                 search: action.payload
             }
              

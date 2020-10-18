@@ -1,29 +1,14 @@
-import { createStore, Store } from "redux";
-import rootReducer from "./Reducer/RootReducer";
+import {createStore, applyMiddleware} from "redux";
+import RootReducer from "./Reducer/RootReducer";
+import {composeWithDevTools} from "redux-devtools-extension";
+import thunk from "redux-thunk";
 
-export type Character = {
-    id: number;
-    name: string;
-    house: string;
-};
+const Store = createStore(RootReducer, composeWithDevTools(applyMiddleware(thunk)));
 
-export type AppState = {
-    people: Character[];
-}
+export type RootStore = ReturnType<typeof RootReducer>
 
-function configureStore(): Store<AppState> {
-    const store = createStore(rootReducer, undefined)
-}
+export default Store
 
-export const Store = configureStore();
-
-
-export function addCharacter(personName: string){
-    return{
-        type: "ADD_PERSON",
-        payload:personName
-    } as const;
-}
 
 
 

@@ -1,7 +1,7 @@
 import { Dispatch } from "redux";
 import * as React from "react";
 import { useDispatch } from "react-redux";
-import searchArtist from "../Action/searchArtist"
+import searchArtist from "../Action/searchAction";
 
 type SearchProps = {
     search: string;
@@ -16,20 +16,25 @@ export const SearchBar: React.FC<SearchProps> = ({ search }) => {
         [dispatch, searchArtist]
       )
     
-      const callSearchFunction = (e) => {
+      const callSearchFunction = (e: React.ChangeEvent<HTMLButtonElement>) => {
           e.preventDefault(); 
           //search.searchArtist
+          dispatch(searchArtist(search))
           
 
       }
 
     return (
         <div>
-            <button onClick></button>
+            <button onClick = {callSearchFunction} value = "SEARCH_ARTIST">
+                submit 
+            </button>
         </div>
     
         )
 }
 
 
-}
+
+
+export default SearchBar;
