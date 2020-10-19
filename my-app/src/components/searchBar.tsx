@@ -7,6 +7,7 @@ import { isReturnStatement } from "typescript";
 export default function Searchbar() {
     //tillater staten å bli oppdatert
     const dispatch = useDispatch(); 
+    //useSelector henter ønsket verdi fra storen
     const search = useSelector(state => state.payload);
 
 
