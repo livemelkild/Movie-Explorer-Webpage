@@ -22,7 +22,7 @@ export const SearchBar: React.FC<SearchProps> = ({ search }) => {
           //search.searchArtist
           dispatch(searchArtist(search))
       }
-
+      // Annen mulig løsning: 
       const [Name, setName] = useState("");
       const nameState = useSelector((state: RootStore) => state.name);
       const handleChange = (event: React.ChangeEvent<HTMLAnchorElement) => setName(event.target.value);
