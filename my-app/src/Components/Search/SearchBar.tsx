@@ -1,7 +1,8 @@
 import { Dispatch } from "redux";
-import * as React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import searchArtist from "../Action/searchAction";
+import searchArtist from ".../Action/searchAction";
+import { RootStore } from ".../store";
 
 type SearchProps = {
     search: string;
@@ -20,15 +21,20 @@ export const SearchBar: React.FC<SearchProps> = ({ search }) => {
           e.preventDefault(); 
           //search.searchArtist
           dispatch(searchArtist(search))
-          
-
       }
+
+      const [Name, setName] = useState("");
+      const nameState = useSelector((state: RootStore) => state.name);
+      const handleChange = (event: React.ChangeEvent<HTMLAnchorElement) => setName(event.target.value);
+      const handleSubmit = () => dispatch(searchArtist(search));
 
     return (
         <div>
             <button onClick = {callSearchFunction} value = "SEARCH_ARTIST">
                 submit 
             </button>
+            <input type="text" onChange={handleChange}/>
+            <button onClick = {handleSubmit}>search</button>
         </div>
     
         )
