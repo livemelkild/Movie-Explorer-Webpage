@@ -23,7 +23,6 @@ export const SearchBar = () => {
             </button>
             <input type="search" onChange={handleChange}/>
         </div>
-    
         )
 }
 
