@@ -1,12 +1,15 @@
 import React from "react";
+import './Header.css';
 
+interface PropsType {
+    text: string
+}
 
-
-const Header = () => {
+const Header = (porps: PropsType) => {
     return (
         <div className="header">
             <header className="App-header">
-                <h1>Header</h1>
+                <h1>{porps.text}</h1>
             </header>
         </div>
     )

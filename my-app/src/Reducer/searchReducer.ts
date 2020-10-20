@@ -1,4 +1,4 @@
-import {Actions} from '../Action/searchAction'; 
+import {Actions} from '../Action/Actions'; 
 
 const initialState = { 
     search: ''

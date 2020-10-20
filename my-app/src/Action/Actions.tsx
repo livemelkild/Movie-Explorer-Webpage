@@ -1,9 +1,11 @@
+
 export const SEARCH_ARTIST = "SEARCH_ARTIST";
+export const SET_LOADING = "SET_LOADING";
 
 type SearchArtist = "SEARCH_ARTIST";
 //const searchArtist: SearchArtist = "SEARCH_ARTIST";
 
- function searchArtist(search: string) {
+ export function searchArtist(search: string) {
     return {
         type: 'SEARCH_ARTIST', 
         payload: search 
@@ -11,7 +13,15 @@ type SearchArtist = "SEARCH_ARTIST";
 
 }
 
-export default searchArtist;
+export function setLoading(loading: boolean){
+    return {
+        type: 'SET_LOADING',
+        payload:  { loading }
+    }
+}
+
+export default {searchArtist, setLoading};
+
 
 export type Actions = ReturnType <typeof searchArtist>
  

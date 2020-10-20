@@ -2,9 +2,10 @@ import { Dispatch } from "redux";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 // hvorfor går det ikke å importere filene?
-import searchArtist from "../../Action/searchAction";
+import {searchArtist} from "../../Action/Actions";
 import { RootStore } from "../../store";
 
+import './SearchBar.css';
 
 // tar inn search som er inputet brukeren skriver inn
 export const SearchBar = () => {
@@ -16,17 +17,13 @@ export const SearchBar = () => {
       const handleSubmit = () => dispatch(searchArtist(search));
 
     return (
-        <div>
-        //trenger en funksjon som blir kalt på når man trykker submit. 
-            <button onClick = {handleSubmit} >
-                submit 
+        <div className= "total">
+            <button onClick = {handleSubmit}  >
+                submit
             </button>
-            <input type="search" onChange={handleChange}/>
+            <input type="search" onChange={handleChange} placeholder="Harry Potter.." name="search"></input>
         </div>
         )
 }
-
-
-
 
 export default SearchBar;
