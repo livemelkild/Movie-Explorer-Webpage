@@ -6,6 +6,7 @@ const mongoose = require("mongoose");
 //import { TestRoutes } from "../routes/test_routes";
 const common_routes_1 = require("../routes/common_routes");
 const character_routes_1 = require("../routes/character_routes");
+const cors = require("cors");
 class App {
     constructor() {
         this.mongoUrl = "mongodb://gruppe9:gruppe9@it2810-09.idi.ntnu.no:27017/mytestdatabase";
@@ -20,6 +21,8 @@ class App {
         this.common_routes.route(this.app);
     }
     config() {
+        //gjør at man kan koble mellom forskjellige domener (localhost:4000 og 3000)
+        this.app.use(cors());
         // support application/json type post data
         this.app.use(bodyParser.json());
         //support application/x-www-form-urlencoded post data
