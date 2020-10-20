@@ -5,7 +5,7 @@ import * as mongoose from 'mongoose';
 //import { TestRoutes } from "../routes/test_routes";
 import { CommonRoutes } from "../routes/common_routes";
 import { CharacterRoutes } from "../routes/character_routes"
-
+import * as cors from "cors";
 
 class App {
 
@@ -28,6 +28,8 @@ class App {
    }
 
 private config(): void {
+   //gjør at man kan koble mellom forskjellige domener (localhost:4000 og 3000)
+      this.app.use(cors());
       // support application/json type post data
       this.app.use(bodyParser.json());
       //support application/x-www-form-urlencoded post data

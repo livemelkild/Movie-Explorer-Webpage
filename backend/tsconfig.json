@@ -1,11 +1,12 @@
 {
     "compilerOptions": {
-       "module": "commonjs",
+       "module": "CommonJS",
        "moduleResolution": "node",
        "pretty": true,
-       "target": "es6",
+       "target": "ES2018",
        "outDir": "./dist",
-       "baseUrl": "./lib"
+       "baseUrl": "./lib",
+       "allowSyntheticDefaultImports": true
     },
     "include": [
        "lib/**/*.ts"
