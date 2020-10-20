@@ -1,11 +1,15 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from "react";
+import Connection from "./database_connection/connection"
 
-function App() {
-  return (
-    <div className="App">
-    </div>
-  );
-}
+class App extends Component {
+
+
+  render() {
+      return (
+        <div>
+          <Connection/>
+        </div>
+      )}
+  }
 
 export default App;
