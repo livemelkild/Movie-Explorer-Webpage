@@ -9,9 +9,8 @@ import { isPropertySignature } from "typescript";
 // tar inn search som er inputet brukeren skriver inn
 export const Character = () => {
     //const dispatch: Dispatch<any> = useDispatch();
-      // Annen mulig løsning:
-   // const characterState = useSelector((state: RootStore) => state.loadingReducer.loading); 
-   // const [character, setCharacter] = useState(characterState);
+    const characterState = useSelector((state: RootStore) => state.loadingReducer.loading); 
+    const [character, setCharacter] = useState(characterState);
 
 
     return (
