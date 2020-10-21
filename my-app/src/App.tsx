@@ -1,15 +1,21 @@
-import React, { Component } from "react";
+
+
+
 import Connection from "./database_connection/connection"
+import React, {useState, Component} from 'react';
+import SearchBar from "./Components/Search/SearchBar";
+import Header from "./Components/Header/Header";
 
-class App extends Component {
+function App() {
 
 
-  render() {
-      return (
-        <div>
-          <Connection/>
-        </div>
-      )}
-  }
+  return (
+    <div className="App">
+      <Header   text = "header"/>
+      <SearchBar />
+      <Connection/>
+    </div>
+  );
+}
 
 export default App;
