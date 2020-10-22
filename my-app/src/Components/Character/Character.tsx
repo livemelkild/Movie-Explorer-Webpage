@@ -30,6 +30,7 @@ export const Character = () => {
     return (
         <div className = "Character">
             <div className = "Name">
+                
 
             </div>
             <div className = "image">

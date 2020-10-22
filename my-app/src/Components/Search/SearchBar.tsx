@@ -14,6 +14,7 @@ export const SearchBar = () => {
       const searchState = useSelector((state: RootStore) => state.searchReducer.search);
       const [search, setSearch] = useState(searchState);
       const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => setSearch(event.target.value);
+      
       const handleSubmit = () => dispatch(searchArtist(search));
 
     return (
