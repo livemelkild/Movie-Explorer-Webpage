@@ -12,7 +12,7 @@ type importState = {
   isLoaded: Boolean;
 }
 
-const searchState = useSelector((state: RootStore) => state.searchReducer.search);
+//const searchState = useSelector((state: RootStore) => state.searchReducer.search);
 
 
 class Connection extends Component<{}, importState> {
@@ -62,7 +62,7 @@ getCharacter(charName: String): (String | Number)[]{
         <div>
           <h1>Data has been loaded</h1>
           <div>
-            { this.getCharacter(searchState) }
+            { this.getCharacter("harry potter") }
           </div>
           <ul>
             {items.map(item => (

@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootStore } from "../../store";
 import { isPropertySignature } from "typescript";
 
-
+/*
 const [items, setItems] = useState([]);
 const [isLoaded, setisLoaded] = useState(false);
 
@@ -18,10 +18,11 @@ function componentDidMount(res: () => void | any){
       .catch( (error) => {console.error(error)} );
 
   }
+  */
 
 // tar inn search som er inputet brukeren skriver inn
 export const Character = () => {
-    //const dispatch: Dispatch<any> = useDispatch();
+    const dispatch: Dispatch<any> = useDispatch();
     const characterState = useSelector((state: RootStore) => state.loadingReducer.loading); 
     const [character, setCharacter] = useState(characterState);
 
