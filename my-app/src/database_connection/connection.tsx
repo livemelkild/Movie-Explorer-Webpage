@@ -40,7 +40,7 @@ class Connection extends Component<{}, importState> {
 
   }
 
-
+//skal man filtrere i backend eller frontend
 getCharacter(charName: String): (String | Number)[]{
     var { isLoaded, items }  = this.state;
     const getCharacter = items.filter(item => 
