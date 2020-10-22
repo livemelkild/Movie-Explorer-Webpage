@@ -3,6 +3,7 @@ import { isTemplateSpan } from "typescript";
 import { RootStore } from "../store";
 import { useDispatch, useSelector } from "react-redux";
 import searchReducer from "../Reducer/searchReducer";
+import SearchBar from "../Components/Search/SearchBar";
 
 
 
@@ -12,10 +13,11 @@ type importState = {
   isLoaded: Boolean;
 }
 
-const searchState = useSelector((state: RootStore) => state.searchReducer.search);
 
+//const searchState = useSelector((state: RootStore) => state.searchReducer.search);
 
 class Connection extends Component<{}, importState> {
+  
 
   constructor(props: importState){
     super(props);
@@ -28,7 +30,7 @@ class Connection extends Component<{}, importState> {
 //componentDidMount renders after the render methode, and then renders the render() methode again
   componentDidMount(){
 
-    fetch("http://localhost:4000/api/character")
+    fetch("http://localhost:8000/api/character")
       .then(res => res.json()) //format the resault to json
       .then(res => {
           this.setState({
@@ -62,7 +64,7 @@ getCharacter(charName: String): (String | Number)[]{
         <div>
           <h1>Data has been loaded</h1>
           <div>
-            { this.getCharacter(searchState) }
+            { this.getCharacter("harry potter") }
           </div>
           <ul>
             {items.map(item => (
