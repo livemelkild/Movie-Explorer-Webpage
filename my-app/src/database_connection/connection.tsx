@@ -1,10 +1,19 @@
 import React, { Component } from "react";
 import { isTemplateSpan } from "typescript";
+import { RootStore } from "../store";
+import { useDispatch, useSelector } from "react-redux";
+import searchReducer from "../Reducer/searchReducer";
+
+
+
 
 type importState = {
   items: {[key: string]: string | number}[];
   isLoaded: Boolean;
 }
+
+const searchState = useSelector((state: RootStore) => state.searchReducer.search);
+
 
 class Connection extends Component<{}, importState> {
 
@@ -42,6 +51,7 @@ getCharacter(charName: String): (String | Number)[]{
     return getChar;
   }
 
+
   render() {
 
     var { isLoaded, items }  = this.state;
@@ -52,7 +62,7 @@ getCharacter(charName: String): (String | Number)[]{
         <div>
           <h1>Data has been loaded</h1>
           <div>
-            { this.getCharacter("Harry Potter") }
+            { this.getCharacter(searchState) }
           </div>
           <ul>
             {items.map(item => (
