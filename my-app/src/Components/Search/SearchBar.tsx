@@ -7,9 +7,12 @@ import { RootStore } from "../../store";
 
 import './SearchBar.css';
 
+
+
 // tar inn search som er inputet brukeren skriver inn
 export const SearchBar = () => {
     const dispatch: Dispatch<any> = useDispatch();
+    
       // Annen mulig løsning: 
       const searchState = useSelector((state: RootStore) => state.searchReducer.search);
       const [search, setSearch] = useState(searchState);

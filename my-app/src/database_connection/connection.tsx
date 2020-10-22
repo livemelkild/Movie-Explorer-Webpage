@@ -9,7 +9,7 @@ import SearchBar from "../Components/Search/SearchBar";
 
 
 type importState = {
-  items: {[key: string]: string | number}[];
+  items: {[key: string]: string | number }[];
   isLoaded: Boolean;
 }
 
@@ -30,7 +30,7 @@ class Connection extends Component<{}, importState> {
 //componentDidMount renders after the render methode, and then renders the render() methode again
   componentDidMount(){
 
-    fetch("http://localhost:8000/api/character")
+    fetch("http://localhost:9000/api/character")
       .then(res => res.json()) //format the resault to json
       .then(res => {
           this.setState({
