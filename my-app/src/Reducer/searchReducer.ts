@@ -1,4 +1,4 @@
-import {Actions} from '../Action/Actions'; 
+import { SEARCH } from "../Action/Actions";
 
 const initialState = { 
     search: ''
@@ -9,14 +9,13 @@ interface SearchState {
 
 export function searchReducer(state: SearchState = initialState, action: { type: string, payload: any }) {
     switch(action.type) {
-        case 'SEARCH_ARTIST' :
+        case SEARCH :
             return {
                 //returnerer den nye staten
                 search: action.payload
             }
         default:
-            return state
-           
+            return state    
     }
 }
 

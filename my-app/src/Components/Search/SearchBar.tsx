@@ -2,7 +2,7 @@ import { Dispatch } from "redux";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 // hvorfor går det ikke å importere filene?
-import {searchArtist} from "../../Action/Actions";
+import {searchInput} from "../../Action/Actions";
 import { RootStore } from "../../store";
 
 import './SearchBar.css';
@@ -14,8 +14,8 @@ export const SearchBar = () => {
       const searchState = useSelector((state: RootStore) => state.searchReducer.search);
       const [search, setSearch] = useState(searchState);
       const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => setSearch(event.target.value);
-      
-      const handleSubmit = () => dispatch(searchArtist(search));
+
+      const handleSubmit = () => dispatch(searchInput(search));
 
     return (
         <div className= "total">
