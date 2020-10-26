@@ -9,23 +9,28 @@ import { isPropertySignature } from "typescript";
 
 import{ searchInput, fetchPending, fetchSuccess, fetchError} from "../Action/Actions";
 
-
+interface ModalState {
+  id: number,
+  title: string,
+  year: string,
+  user_rating: string,
+  img_url: string,
+  gendre: string[]
+}
 
 function content() {
-  return (dispatch: Function) => {
+  console.log("går inn i content");
+  
+  return(
+    (dispatch: Function) => {
     dispatch(fetchPending());
     fetch('http://localhost:4000/api/character')
-    .then(res => res.json())
-    .then(res => {
-      if(res.error) {
-          throw(res.error);
+    .then(response => response.json())
+    .then((data: ModalState) => dispatch(fetchSuccess(data)))
+    .catch(error => dispatch(fetchError))
       }
-  })
-  .catch(error => {
-      dispatch(fetchError(error));
-  })
+    )
   }
-}
 
 export default content();
 

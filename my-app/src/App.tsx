@@ -3,17 +3,21 @@ import React, {useState, Component} from 'react';
 import SearchBar from "./Components/Search/SearchBar";
 import SearchSort from "./Components/Search/SearchSort";
 import Header from "./Components/Header/Header";
+import Movie from "./Components/Movie/Movie";
 
 import PrintText from "./Components/PrintText";
 import { Dispatch } from "redux";
 import { useDispatch, useSelector } from "react-redux";
 import { RootStore } from "./store";
+import { searchInput } from "./Action/Actions";
 
 
 function App() {
 
     const searchState = useSelector((state: RootStore) => state.searchReducer.search);
     const [search, setSearch] = useState(searchState);
+
+    searchInput(search)
     
 
   return (
@@ -21,8 +25,9 @@ function App() {
       <Header   text = "header"/>
       <SearchBar />
       <SearchSort />
+      <Movie />
       <PrintText text = {search} />
-      <Connection />
+      
     </div>
   );
 }

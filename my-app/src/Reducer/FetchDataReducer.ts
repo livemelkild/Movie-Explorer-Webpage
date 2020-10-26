@@ -24,6 +24,9 @@ export function fetchDataReducer(state: FetchState = initialState, action: { typ
                 fetch: action.payload
             }
         case FETCH_ERROR:
+            console.log(
+                'loading error, check if backend is connected properly'
+              );
             return {
                 ...state,
                 error: action.error
@@ -35,30 +38,3 @@ export function fetchDataReducer(state: FetchState = initialState, action: { typ
 }
 
 export default fetchDataReducer; 
-
-
-/*
-import { SEARCH } from "../Action/Types";
-
-const initialState = { 
-    fetch: false
-}
-interface SearchState {
-    fetch: boolean
-}
-
-export function fetchDataReducer(state: SearchState = initialState, action: { type: string, payload: any, res: any }) {
-    switch(action.type) {
-        case SEARCH :
-            return {
-                fetch: action.payload
-            }
-        default:
-            return state
-           
-    }
-}
-
-export default fetchDataReducer; 
-
-*/

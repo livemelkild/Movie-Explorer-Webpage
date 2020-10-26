@@ -16,23 +16,54 @@ export const YEAR_DESC = 'YEAR_DESC';
 export const TITLE_ASC = 'TITLE_ASC';
 export const TITLE_DESC = 'TITLE_DESC';
 
+export const OPEN_MODAL = 'OPEN_MODAL';
+export const CLOSE_MODAL = 'CLOSE_MODAL';
+
+export function openModal(
+    movie = {
+        id: 0,
+        title: '',
+        year: '',
+        user_rating: '',
+        img_url: '',
+        gendre: []
+    }
+  ) {
+    return (dispatch: Function) =>
+      fetch(`http://localhost:4000/api/character/${movie.id}`)
+        .then(() =>
+          dispatch({
+            type: OPEN_MODAL,
+            payload: movie
+          })
+        )
+        .catch(err => console.log(err));
+  }
+  
+  export function closeModal() {
+    return {
+      type: CLOSE_MODAL
+    };
+  }
+
+
 export function fetchPending() {
     return {
         type: FETCH_PENDING
     }
 }
-export function fetchSuccess(fetch: any) {
+export function fetchSuccess(response: any) {
     return {
         type: FETCH_SUCCESS,
-        fetch: fetch
+        payload: response.data
     }
 }
-export function fetchError(error: any) {
+export function fetchError() {
     return {
         type: FETCH_ERROR,
-        error: error
     }
 }
+
 
 export function yearAsk() {
     return {
@@ -104,7 +135,7 @@ export function fetchGetData() {
 */
 
 
-export default {searchInput, setLoading, fetchPending, fetchSuccess, fetchError, yearAsk, yearDesc, titleAsk, titleDesc};
+export default {searchInput, setLoading, fetchPending, fetchSuccess, fetchError, yearAsk, yearDesc, titleAsk, titleDesc, openModal, closeModal};
 
 
 export type Actions = ReturnType <typeof searchInput>

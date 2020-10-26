@@ -1,4 +1,4 @@
-import {Actions} from '../Action/Actions'; 
+import {SET_LOADING} from '../Action/Actions'; 
 
 const initialState = { 
     loading: false
@@ -9,7 +9,7 @@ interface LoadingState {
 
 export function loadingReducer(state: LoadingState = initialState, action: { type: string, payload: any }) {
     switch(action.type) {
-        case 'SET_LOADING' :
+        case SET_LOADING :
             return {
                 loading: action.payload
             }
