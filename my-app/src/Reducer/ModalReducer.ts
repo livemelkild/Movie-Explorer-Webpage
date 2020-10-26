@@ -35,6 +35,7 @@ export default function modalReducer(state: ModalState = initialState, action: {
     }
   }
 
+  //lager er selector
   export const selectModal = (state: ModalState) => state
 
 
