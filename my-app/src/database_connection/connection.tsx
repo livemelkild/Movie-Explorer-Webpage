@@ -28,7 +28,7 @@ class Connection extends Component<{}, importState> {
 //componentDidMount renders after the render methode, and then renders the render() methode again
   componentDidMount(){
 
-    fetch("http://localhost:4000/api/character")
+    fetch("http://localhost:4000/api/movie")
       .then(res => res.json()) //format the resault to json
       .then(res => {
           this.setState({

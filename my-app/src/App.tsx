@@ -5,7 +5,7 @@ import SearchSort from "./Components/Search/SearchSort";
 import Header from "./Components/Header/Header";
 import Movie from "./Components/Movie/Movie";
 
-import PrintText from "./Components/PrintText";
+
 import { Dispatch } from "redux";
 import { useDispatch, useSelector } from "react-redux";
 import { RootStore } from "./store";
@@ -26,8 +26,7 @@ function App() {
       <SearchBar />
       <SearchSort />
       <Movie />
-      <PrintText text = {search} />
-      
+      <Connection />
     </div>
   );
 }

@@ -50,17 +50,13 @@ export const Movie = () => {
     const searchState = useSelector((state: RootStore) => state.searchReducer.search);
 
     console.log(searchState);
-
     
-
-    //kjører bare en gang
+    //kjører bare en gang, henter filmene til initalstate
     useEffect( 
         () => {
-            console.log("search one time lol");
-
+            console.log("search one time");
             dispatch(fetchPending());
-
-            fetch('http://localhost:4000/api/character')
+            fetch('http://localhost:4000/api/movie')
             .then(response => response.json())
             .then((data: ModalState) => dispatch(fetchSuccess(data)))
             .catch(error => dispatch(fetchError))
@@ -74,17 +70,17 @@ export const Movie = () => {
               }, [searchState]
             )
     
-
+     //legger inn et bilde, endre til å hente bilde på ID         
     function parseUrl(id: number) {
         return `https://upload.wikimedia.org/wikipedia/commons/5/5b/Killbill-vol1-logo.svg`;
       }
-
+    
+    // henter selector i modelreducer
     const state = useSelector(selectModal);
     console.log(state.id);
 
     
-    return (
-        
+    return ( 
         <div className = "movieContainer"
             onClick={() =>
                 dispatch(
