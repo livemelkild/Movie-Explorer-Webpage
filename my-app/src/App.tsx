@@ -8,6 +8,8 @@ import Header from "./Components/Header/Header";
 
 function App() {
 
+  //Denne branchen, develop_ekstra, er laget for sikkerhetsskyld når jeg merget med develop
+
 
   return (
     <div className="App">
