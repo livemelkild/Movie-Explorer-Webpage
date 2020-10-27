@@ -8,12 +8,13 @@ export class CharacterRoutes {
 
     public route(app: Application) {
 
-        app.get("/api/character", (req: Request, res: Response) => {
-            this.character_controller.get_character(req, res);
+        app.get("/api/movie", (req: Request, res: Response) => {
+            this.character_controller.get_movie(req, res);
         })
 
-        app.get("/api/character/house", (req: Request, res: Response) => {
-            this.character_controller.get_house(req, res);
+        app.get("/api/movie/:title", (req: Request, res: Response) => {
+            this.character_controller.get_movie_one(req, res);
         })
+
     }
 }

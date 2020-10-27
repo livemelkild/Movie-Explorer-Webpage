@@ -1,25 +1,29 @@
 import { ICharacter } from './model';
-import characters from './schema';
+import movie from './schema';
 
 export default class CharacterService {
     
-    public createCharacter(user_params: ICharacter, callback: any) {
-        const _session = new characters(user_params);
+    public createMovie(user_params: ICharacter, callback: any) {
+        const _session = new movie(user_params);
         _session.save(callback);
     }
 
-    public filterCharacter(query: any, callback: any) {
-        characters.find(query, callback);
-    }
-
-    public updateCharacter(user_params: ICharacter, callback: any) {
-        const query = { id: user_params._id };
-        characters.findOneAndUpdate(query, user_params, callback);
+    public filterMovie(query: any, callback: any) {
+        movie.find(query, callback).limit(100);
     }
     
-    public deleteCharacter(_name: String, callback: any) {
+    public findByMovieID(query: any, callback: any) {
+        movie.findById(query, callback);
+    }
+
+    public updateMovie(user_params: ICharacter, callback: any) {
+        const query = { id: user_params._id };
+        movie.findOneAndUpdate(query, user_params, callback);
+    }
+    
+    public deleteMovie(_name: String, callback: any) {
         const query = { name: name };
-        characters.deleteOne(query, callback);
+        movie.deleteOne(query, callback);
     }
 
 }

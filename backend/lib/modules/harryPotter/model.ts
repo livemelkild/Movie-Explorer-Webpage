@@ -2,12 +2,11 @@
 
 export interface ICharacter {
     _id: String;
-    name: String;
-    gender: String;
-    house: String;
-    dateOfBirth?: String;
-    yearOfBirth?: Number;
-    actor: String;
-    image?: String;
+    title: String;
+    year: String;
+    user_rating: String;
+    img_url: String;
+    gendre: String[];
+    
     //modification_notes: ModificationNote[]
 }

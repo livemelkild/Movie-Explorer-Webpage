@@ -7,11 +7,11 @@ class CharacterRoutes {
         this.character_controller = new characterControllers_1.CharacterController();
     }
     route(app) {
-        app.get("/api/character", (req, res) => {
-            this.character_controller.get_character(req, res);
+        app.get("/api/movie", (req, res) => {
+            this.character_controller.get_movie(req, res);
         });
-        app.get("/api/character/house", (req, res) => {
-            this.character_controller.get_house(req, res);
+        app.get("/api/movie/:title", (req, res) => {
+            this.character_controller.get_movie_one(req, res);
         });
     }
 }
