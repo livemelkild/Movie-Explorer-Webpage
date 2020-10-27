@@ -1,11 +1,22 @@
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 import { isTemplateSpan } from "typescript";
 import { RootStore } from "../store";
 import { useDispatch, useSelector } from "react-redux";
 import searchReducer from "../Reducer/searchReducer";
+import { selectModal } from "../Reducer/ModalReducer";
 
 
+import { openModal, fetchPending, fetchSuccess, fetchError } from '../Action/Actions';
+import { error } from "console";
 
+interface ModalState {
+  id: number,
+  title: string,
+  year: string,
+  user_rating: string,
+  img_url: string,
+  gendre: string[]
+}
 
 type importState = {
   items: {[key: string]: string | number}[];
@@ -17,6 +28,7 @@ type importState = {
 
 class Connection extends Component<{}, importState> {
 
+  
   constructor(props: importState){
     super(props);
     this.state = {
@@ -40,7 +52,8 @@ class Connection extends Component<{}, importState> {
 
   }
 
-//skal man filtrere i backend eller frontend
+
+/*
 getCharacter(charName: String): (String | Number)[]{
     var { isLoaded, items }  = this.state;
     const getCharacter = items.filter(item => 
@@ -50,7 +63,22 @@ getCharacter(charName: String): (String | Number)[]{
     });
     return getChar;
   }
-
+  */
+ /*
+  dispatch = useDispatch();
+  
+  filterTitle() {
+    console.log("hei");
+    const filter = "A Rainy Day in New York";
+    console.log("hei");
+    fetch( `http://localhost:4000/api/movie/${filter}`)
+    .then(res => res.json())
+    .then((data: ModalState) => this.dispatch(fetchSuccess(data)))
+    .catch(error => this.dispatch(fetchError))
+    }
+    
+*/
+  
 
   render() {
 
@@ -61,16 +89,22 @@ getCharacter(charName: String): (String | Number)[]{
       return (
         <div>
           <h1>Data has been loaded</h1>
+          <h3>filter</h3>
+          {/*<button onClick={ () => this.filterTitle() }> filter title</button>*/}
+          {/*
           <div>
             { this.getCharacter("harry potter") }
           </div>
+          */}
+          {/*
           <ul>
             {items.map(item => (
-                <li key={item.name}>
-                      Name: {item.name} | House: {item.house} | Image: <img src={"item.image"} width="50" height="50"></img> {/*hvorfor får jeg ikke hentet ut bildene*/}
+                <li key={item.title}>
+                      Ttile: {item.title} | House: {item.year} | Image: <img src={"item.image"} width="50" height="50"></img> 
                 </li>
             ))};
           </ul>
+            */}
             
         </div>
       )}
