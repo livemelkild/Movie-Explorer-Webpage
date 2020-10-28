@@ -14,7 +14,7 @@ class CharacterController {
         const sort = req.query.sort ? req.query.sort : 'year';
         const order = req.query.order ? req.query.order : '-1';
         const limitView = req.query.limit ? parseInt(req.query.limit) : 5;
-        const page = req.query.page ? parseInt(req.query.page) : 1;
+        const page = req.query.page ? parseInt(req.query.page) : 0;
         let content = {};
         console.log(limitView);
         console.log(page);
@@ -41,7 +41,7 @@ class CharacterController {
                 // res.json(user_data);
                 service_1.successResponse('get user successfull', user_data, res);
             }
-        }).skip(page + limitView).limit(limitView);
+        }).skip(page * limitView).limit(limitView);
         /*   } else {
                insufficientParameters(res);
            }

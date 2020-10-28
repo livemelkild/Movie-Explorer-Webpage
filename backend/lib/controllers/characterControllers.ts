@@ -18,24 +18,11 @@ export class CharacterController{
         const sort = req.query.sort ? req.query.sort : 'year';
         const order = req.query.order ? req.query.order : '-1';
         const limitView = req.query.limit ? parseInt(req.query.limit) : 5;
-        const page = req.query.page ? parseInt(req.query.page) : 1;
+        const page = req.query.page ? parseInt(req.query.page) : 0;
         let content = {};
         console.log(limitView);
         console.log(page);
-   //if (req.params.id) {
-/*
-        movie.paginate(content,{
-            page: page,
-            limit: limitView
-        }).then(side => {
-            console.log(side);
-            res.json(side)
-        })
-            .catch(err => {
-                res.status(500).json(err);
-            });
-    
-*/
+
            
             const user_filter = { _id: req.params.id };
 
@@ -46,7 +33,7 @@ export class CharacterController{
                    // res.json(user_data);
                     successResponse('get user successfull', user_data, res);
                 }
-            }).skip(page + limitView).limit(limitView);
+            }).skip(page*limitView).limit(limitView);
      /*   } else {
             insufficientParameters(res);
         }
