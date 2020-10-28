@@ -22,7 +22,7 @@ export const SearchBar = () => {
             <button onClick = {handleSubmit}  >
                 submit
             </button>
-            <input type="search" onChange={handleChange} placeholder="Kill Bill.." name="search"></input>
+            <input type="search" onChange={handleChange} placeholder="Søk på filmer du leter etter" name="search"></input>
         </div>
         )
 }
