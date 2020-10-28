@@ -4,9 +4,9 @@ export interface ICharacter {
     _id: String;
     title: String;
     year: String;
-    user_rating: String;
+    users_rating: String;
     img_url: String;
-    gendre: String[];
+    genre: String[];
     
     //modification_notes: ModificationNote[]
 }

@@ -81,6 +81,38 @@ export const Movie = () => {
 
     
     return ( 
+
+        <div className="row">
+        <div className="col s12 m7">
+          <div className="card">
+            <div className="card-image">
+              <img src={parseUrl(state.id)} />
+              <span className="card-title">Kill Bill</span>
+            </div>
+            <div className="card-content">
+              <p>I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.</p>
+            </div>
+            <div className="card-action">
+              <a><button onClick={() =>
+                dispatch(
+                    openModal({
+                        id: state.id,
+                        title: state.title,
+                        year: state.year,
+                        user_rating: state.user_rating,
+                        img_url: state.img_url,
+                        gendre: []
+                    })
+                )
+            }> </button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+   )};
+
+{/*
         <div className = "movieContainer"
             onClick={() =>
                 dispatch(
@@ -97,9 +129,9 @@ export const Movie = () => {
             <div className='movieName'>Kill Bill</div> 
             <img className = "picture" src= {parseUrl(state.id)} />
         </div>
-        
+        */}
 
-    )};
+ 
     
 
 export default Movie;

@@ -1,4 +1,5 @@
 import * as mongoose from 'mongoose';
+const mongoosePaginate = require('mongoose-paginate');
 //import { ModificationNote } from '../common/model';
 
 const Schema = mongoose.Schema;
@@ -10,12 +11,14 @@ const movie = new Schema(
         _id: {type: String},
         title: {type: String},
         year: {type: String},
-        user_rating: {type: String},
+        users_rating: {type: String},
         img_url: {type: String},
-        gendre: {type: [String]},
+        genre: {type: [String]},
         
     //    modification_notes: [ModificationNote]
 });
+
+movie.plugin(mongoosePaginate);
 //skal referer til collection som vi lagde i databsen
 //movie.createIndex( { title: "text",  } )
 

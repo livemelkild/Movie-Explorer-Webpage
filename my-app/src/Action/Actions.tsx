@@ -7,6 +7,7 @@ export const FETCH_ERROR = "FETCH_ERROR";
 export const SET_LOADING = "SET_LOADING";
 export const NEXT_PAGE = 'NEXT_PAGE';
 export const PREV_PAGE = 'PREV_PAGE';
+export const RESET_PAGE = 'RESET_PAGE';
 export const GET_DATA_SUCCESS = 'GET_DATA_SUCCESS';
 export const GET_DATA_FAIL = 'GET_DATA_FAIL';
 export const SEARCH = "SEARCH";
@@ -108,6 +109,12 @@ export function nextPage() {
 export function prevPage() {
     return {
         type: 'PREV_PAGE'
+    }
+}
+
+export function resetPage() {
+    return {
+        type: 'RESET_PAGE'
     }
 }
 

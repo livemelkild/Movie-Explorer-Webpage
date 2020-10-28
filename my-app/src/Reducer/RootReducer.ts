@@ -4,6 +4,7 @@ import loadingReducer from"./LoadingReducer";
 import fetchDataReducer from "./FetchDataReducer";
 import sortReducer from "./SortReducer";
 import ModalReducer from "./ModalReducer";
+import pageReducer from "./PageReducer";
 
 
 const RootReducer = combineReducers({
@@ -11,7 +12,8 @@ const RootReducer = combineReducers({
     loadingReducer: loadingReducer,
     fetchDataReducer: fetchDataReducer,
     sortReducer: sortReducer,
-    ModalReducer: ModalReducer
+    ModalReducer: ModalReducer,
+    pageReducer: pageReducer
   });
   
   export default RootReducer
