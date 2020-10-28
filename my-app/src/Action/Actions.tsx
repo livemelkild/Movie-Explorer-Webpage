@@ -2,7 +2,7 @@
 
 export const FETCH_PENDING = "FETCH_PENDING";
 export const FETCH_SUCCESS = "FETCH_SUCCESS";
-export const FETCH_ERROR = "FETCH_ERROR";
+export const FETCH_FAIL = "FETCH_FAIL";
 
 export const SET_LOADING = "SET_LOADING";
 export const NEXT_PAGE = 'NEXT_PAGE';
@@ -52,15 +52,15 @@ export function fetchPending() {
         type: FETCH_PENDING
     }
 }
-export function fetchSuccess(response: any) {
+export function fetchSuccess(res: any) {
     return {
         type: FETCH_SUCCESS,
-        payload: response.data
+        payload: res.data
     }
 }
-export function fetchError() {
+export function fetchFail() {
     return {
-        type: FETCH_ERROR,
+        type: FETCH_FAIL,
     }
 }
 

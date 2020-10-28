@@ -5,7 +5,7 @@ import { RootStore } from "../../store";
 import { isPropertySignature } from "typescript";
 import { selectModal } from "../../Reducer/ModalReducer";
 
-import { openModal, fetchPending, fetchSuccess, fetchError } from '../../Action/Actions';
+import { openModal, fetchPending, fetchSuccess, fetchFail } from '../../Action/Actions';
 
 interface ModalState {
     id: number,
@@ -59,7 +59,7 @@ export const Movie = () => {
             fetch('http://localhost:4000/api/movie')
             .then(response => response.json())
             .then((data: ModalState) => dispatch(fetchSuccess(data)))
-            .catch(error => dispatch(fetchError))
+            .catch(error => dispatch(fetchFail))
              
               }, [] 
             )
