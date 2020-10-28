@@ -17,15 +17,31 @@ export class CharacterController{
 
         const sort = req.query.sort ? req.query.sort : 'year';
         const order = req.query.order ? req.query.order : '-1';
+
         const limitView = req.query.limit ? parseInt(req.query.limit) : 5;
         const page = req.query.page ? parseInt(req.query.page) : 0;
-        let content = {};
-        console.log(limitView);
-        console.log(page);
+        const search = req.query.search ? req.query.search : "";
+        console.log(search)
+        const searchValue = {$regex : RegExp(search), $options : '-i'}
+        const error = "No result"
 
-           
-            const user_filter = { _id: req.params.id };
+        if (search != "" ){
+            const result = movie.find({title: searchValue}, (err: any, user_data: ICharacter) => {
+                if (err) {
+                    mongoError(err, res);
+                } else {
+                   // res.json(user_data);
+                    successResponse('get user successfull', user_data, res);
+                }
+            }).skip(page*limitView).limit(limitView) 
 
+
+           if (result == null ){
+               failureResponse("no movie with this name", error, res);
+           }
+        }
+        else{
+            
             movie.find({}, (err: any, user_data: ICharacter) => {
                 if (err) {
                     mongoError(err, res);
@@ -34,6 +50,14 @@ export class CharacterController{
                     successResponse('get user successfull', user_data, res);
                 }
             }).skip(page*limitView).limit(limitView);
+        }
+
+        console.log(limitView);
+        console.log(page);
+
+           
+
+
      /*   } else {
             insufficientParameters(res);
         }
@@ -44,6 +68,7 @@ export class CharacterController{
 
     
     public get_movie_one(req: Request, res: Response) {
+
         if (req.params.title) {
             const user_filter = {title:req.params.title} ;
             

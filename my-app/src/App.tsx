@@ -31,15 +31,24 @@ const App = () => {
     const [items, setItems] = useState();
     
     useEffect(() => {
-    fetch(`http://localhost:4000/api/movie?page=${page}`)
+    fetch(`http://localhost:4000/api/movie?page=${page}&search=${searchState}`)
       .then(res => res.json()) //format the resault to json
       .then(res => {
           console.log(res)
           console.log(page)
           setItems(res.DATA)
-          });}, [page]);
+          });}, [page, searchState]);
+/*
+    useEffect(() => {
+    fetch(`http://localhost:4000/api/movie/:title=${search}`)
+      .then(res => res.json()) //format the resault to json
+      .then(res => {
+          console.log(res)
+          console.log(page)
+          setItems(res.DATA)
+          });}, [search]);
 
-
+*/
   return (
     <div className="App">
       <Header   text = "header"/>
