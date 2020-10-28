@@ -77,33 +77,6 @@ class Connection extends Component<{}, importState> {
   }
 
 
-/*
-getCharacter(charName: String): (String | Number)[]{
-    var { isLoaded, items }  = this.state;
-    const getCharacter = items.filter(item => 
-    item.name === charName);
-    const getChar = getCharacter.map(function (char){
-      return char.name;
-    });
-    return getChar;
-  }
-  */
- /*
-  dispatch = useDispatch();
-  
-  filterTitle() {
-    console.log("hei");
-    const filter = "A Rainy Day in New York";
-    console.log("hei");
-    fetch( `http://localhost:4000/api/movie/${filter}`)
-    .then(res => res.json())
-    .then((data: ModalState) => this.dispatch(fetchSuccess(data)))
-    .catch(error => this.dispatch(fetchError))
-    }
-    
-*/
-  
-
   render() {
     
 

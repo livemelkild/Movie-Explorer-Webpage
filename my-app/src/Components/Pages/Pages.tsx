@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { useDispatch, useSelector} from "react-redux";
 import { selectPage } from "../../Reducer/PageReducer";
 import { Dispatch } from "redux";
+import { RootStore } from "../../store";
 
 import { nextPage, prevPage, resetPage } from '../../Action/Actions'
 
@@ -14,14 +15,19 @@ interface iProps{
     changePage (page: number): number;
 }
 
+/*
+      const searchState = useSelector((state: RootStore) => state.searchReducer.search);
+      const [search, setSearch] = useState(searchState);
+      const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => setSearch(event.target.value);
+*/
 const Pages = () => {
     const dispatch: Dispatch<any> = useDispatch(); 
-    const pageState = useSelector(selectPage)
+    const pageState = useSelector((state: RootStore) => state.pageReducer.page);
 
     const changePageButton = (action: string) => {
         
         //pageState er page tallet gjennom pageReducer
-        if ( pageState === 1 && action === "prevPage"){
+        if ( pageState === 0 && action === "prevPage"){
             dispatch(resetPage());
         }else if (action === "prevPage"){
             dispatch(prevPage());

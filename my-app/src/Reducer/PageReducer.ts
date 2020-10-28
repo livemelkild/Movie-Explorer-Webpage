@@ -13,22 +13,19 @@ export default function pageReducer(state: PageState = initialState, action: {ty
         switch (action.type){
             case NEXT_PAGE:
                 return{
-                    ...state,
                     page: state.page + 1
                 }
             case PREV_PAGE:
                 return{
-                    ...state,
                     page: state.page - 1
                 }
             case RESET_PAGE:
                 return{
-                    ...state,
-                    page: 1
+                    page: 0
                 }
             default:
                 return{
-                    ...state
+                    page: 0
                 }
         }
 }
