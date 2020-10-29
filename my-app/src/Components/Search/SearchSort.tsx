@@ -11,7 +11,6 @@ export const SearchSort = () => {
  
     return (
         <div className = "sort">
-            <p>Sort</p>
             <button color="info" onClick={() => callSortFunction(titleAsk, "1", "Title")}>Title A-Z</button>
             <button color="info" onClick={() => callSortFunction(titleDesc, "-1", "Title")}>Title Z-A</button>
             <button color="info" onClick={() => callSortFunction(yearAsk, "-1", "Year")}>New - Old</button>
