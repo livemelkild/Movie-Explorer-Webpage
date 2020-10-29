@@ -27,7 +27,7 @@ const Pages = () => {
     const changePageButton = (action: string) => {
         
         //pageState er page tallet gjennom pageReducer
-        if ( pageState === 0 && action === "prevPage"){
+        if ( pageState === 0 && action === "prevPage" || action === "resetPage"){
             dispatch(resetPage());
         }else if (action === "prevPage"){
             dispatch(prevPage());
@@ -49,6 +49,9 @@ const Pages = () => {
           {/*  <p>Page: { pageState }</p>*/}
             <button color="success" onClick={() => changePageButton("prevPage" )} type="submit" value="PREV">PREV</button>
             <button color="success" onClick={() => changePageButton("nextPage")} type="submit" value="PREV">NEXT</button>
+            <button color="success" onClick={() => changePageButton("resetPage")} type="submit" value="PREV">RESET</button>
+            
+            //legg inn knapper for å endre view
         </div>
     )
 

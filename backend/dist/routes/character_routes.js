@@ -10,8 +10,8 @@ class CharacterRoutes {
         app.get("/api/movie", (req, res) => {
             this.character_controller.get_movie(req, res);
         });
-        app.get("/api/movie/:title", (req, res) => {
-            this.character_controller.get_movie_one(req, res);
+        app.get("/api/search/:title", (req, res) => {
+            this.character_controller.get_movie_search(req, res);
         });
     }
 }

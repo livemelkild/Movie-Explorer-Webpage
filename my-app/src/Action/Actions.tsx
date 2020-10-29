@@ -8,6 +8,7 @@ export const SET_LOADING = "SET_LOADING";
 export const NEXT_PAGE = 'NEXT_PAGE';
 export const PREV_PAGE = 'PREV_PAGE';
 export const RESET_PAGE = 'RESET_PAGE';
+
 export const GET_DATA_SUCCESS = 'GET_DATA_SUCCESS';
 export const GET_DATA_FAIL = 'GET_DATA_FAIL';
 export const SEARCH = "SEARCH";
@@ -19,6 +20,41 @@ export const TITLE_DESC = 'TITLE_DESC';
 
 export const OPEN_MODAL = 'OPEN_MODAL';
 export const CLOSE_MODAL = 'CLOSE_MODAL';
+
+export const FILTER_DRAMA = "FILTER_DRAMA";
+export const FILTER_ROMANCE = "FILTER_ROMANCE";
+export const FILTER_HORROR= "FILTER_HORROR";
+export const FILTER_THRILLER = "FILTER_THRILLER";
+export const FILTER_COMEDY = "FILTER_COMEDY";
+
+export function filterDrama() {
+    return {
+        type: FILTER_DRAMA
+    }
+}
+
+export function filterRomance() {
+    return {
+        type: FILTER_ROMANCE
+    }
+}
+
+export function filterHorror() {
+    return {
+        type: FILTER_HORROR
+    }
+}
+export function filterThriller() {
+    return {
+        type: FILTER_THRILLER
+    }
+}
+
+export function filterComedy() {
+    return {
+        type: FILTER_COMEDY
+    }
+}
 
 export function openModal(
     movie = {
@@ -142,7 +178,7 @@ export function fetchGetData() {
 */
 
 
-export default {searchInput, setLoading, fetchPending, fetchSuccess, fetchError, yearAsk, yearDesc, titleAsk, titleDesc, openModal, closeModal};
+export default {searchInput, setLoading, fetchPending, fetchSuccess, fetchError, yearAsk, yearDesc, titleAsk, titleDesc, openModal, closeModal, filterComedy, filterDrama, filterHorror, filterRomance, filterThriller};
 
 
 export type Actions = ReturnType <typeof searchInput>

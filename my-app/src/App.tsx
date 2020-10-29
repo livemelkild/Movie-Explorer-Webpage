@@ -3,15 +3,17 @@ import React, {useState, Component, useEffect} from 'react';
 import SearchBar from "./Components/Search/SearchBar";
 import SearchSort from "./Components/Search/SearchSort";
 import Header from "./Components/Header/Header";
-
+import "./App.css"
 
 import { Dispatch } from "redux";
 import { useDispatch, useSelector } from "react-redux";
 import { RootStore } from "./store";
 import { searchInput } from "./Action/Actions";
 import Pages from "./Components/Pages/Pages";
-import { selectPage } from "./Reducer/PageReducer";
+
+
 import SingleMovie from "./Components/Movie/SingleMovie"
+import { isTemplateSpan } from "typescript";
 
 
 type importState = {
@@ -28,17 +30,32 @@ const App = () => {
 
     const page = useSelector((state: RootStore) => state.pageReducer.page);
 
+    const filterSingle = useSelector((state: RootStore) => state.filterReducer.filterby);
+    const filter = [filterSingle]
+
     const [items, setItems] = useState();
     
     useEffect(() => {
-    fetch(`http://localhost:4000/api/movie?page=${page}&search=${searchState}`)
+    fetch(`http://localhost:4000/api/movie?page=${page}&search=${searchState}&filter=${filter}`)
       .then(res => res.json()) //format the resault to json
       .then(res => {
           console.log(res)
           console.log(page)
           setItems(res.DATA)
-          });}, [page, searchState]);
+          });}, [page, searchState, filterSingle]);
+
+
+
 /*
+          useEffect(() => {
+            fetch(`http://localhost:4000/api/search/:title?filter=${filter}`)
+              .then(res => res.json()) //format the resault to json
+              .then(res => {
+                  console.log(res)
+                  console.log(page)
+                  setItems(res.DATA)
+                  });}, [filter]);
+
     useEffect(() => {
     fetch(`http://localhost:4000/api/movie/:title=${search}`)
       .then(res => res.json()) //format the resault to json
@@ -53,18 +70,19 @@ const App = () => {
     <div className="App">
       <Header   text = "header"/>
       <SearchBar />
-      <SearchSort />
+        
         {items?.map((item:any) => (
-          <div  key={item._id}>
-          <SingleMovie
+          <div key={item._id}>
+            <SingleMovie 
                 title={item.title}
                 year={item.year}
                 users_rating={item.user_rating}
                 img_url={item.img_url}
                 genre={item.genre}
                 />
-          </div>
+              </div>
         ))}
+    
       <Pages />
     </div>
   );

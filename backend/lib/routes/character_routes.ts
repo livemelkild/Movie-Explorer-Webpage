@@ -12,8 +12,8 @@ export class CharacterRoutes {
             this.character_controller.get_movie(req, res);
         })
 
-        app.get("/api/movie/:title", (req: Request, res: Response) => {
-            this.character_controller.get_movie_one(req, res);
+        app.get("/api/search/:title", (req: Request, res: Response) => {
+            this.character_controller.get_movie_search(req, res);
         })
     }
 }
