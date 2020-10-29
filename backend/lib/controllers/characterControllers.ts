@@ -13,12 +13,31 @@ export class CharacterController{
     private character_service: CharacterService = new CharacterService();
 
     
+    public save_rating(req: any, res: Response){
+        const id = req.query.id;
+        const ratings = parseInt(req.query.ranking);
+        console.log(id);
+        console.log(ratings);
 
+        const movies = movie.find({id: id})
+
+        const updateRating = movie.updateOne(
+                {_id: id},
+                {$inc:
+                    {
+                        raiting: ratings
+                    }
+                }
+                );
+        res.json(updateRating);
+    
+    }
 
 
     public get_movie(req: any, res: Response) {
       //  const limitView = req.query.limit ? parseInt(req.query.limit) : 5;
-
+        const id = req.query.id;
+        console.log(id)
         const order = req.query.order ? parseInt(req.query.order) : 0;
 
         const limitView = req.query.limit ? parseInt(req.query.limit) : 5;
@@ -41,9 +60,7 @@ export class CharacterController{
 
 
         if (search != "" ){
-            
-
-                
+                            
             if (filter != ""){
                 console.log(filter)
                 movie.find({genre: filter, title: searchValue}, (err: any, user_data: ICharacter) => {

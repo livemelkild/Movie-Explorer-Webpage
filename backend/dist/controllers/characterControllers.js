@@ -9,8 +9,22 @@ class CharacterController {
     constructor() {
         this.character_service = new service_2.default();
     }
+    save_rating(req, res) {
+        const id = req.query.id;
+        const ratings = req.query.ranking;
+        console.log(id);
+        console.log(ratings);
+        const movies = schema_1.default.find({ id: id });
+        const updateRating = schema_1.default.updateOne({ _id: id }, { $inc: {
+                raiting: ratings
+            }
+        });
+        res.json(updateRating);
+    }
     get_movie(req, res) {
         //  const limitView = req.query.limit ? parseInt(req.query.limit) : 5;
+        const id = req.query.id;
+        console.log(id);
         const order = req.query.order ? parseInt(req.query.order) : 0;
         const limitView = req.query.limit ? parseInt(req.query.limit) : 5;
         const page = req.query.page ? parseInt(req.query.page) : 0;

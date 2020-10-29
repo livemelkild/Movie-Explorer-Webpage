@@ -1,7 +1,9 @@
 import React from "react";
 import "./SingleMovie.css"
+import Rating from "./Rating"
 
 interface iMovie {
+        id: string | number,
         title: string | number,
         year: string | number,
         users_rating: string | number,
@@ -22,9 +24,11 @@ const genreList = props.genre;
             </div>
             <div className="card-content">
             <p> Year: {props.year}, Genre: {props.genre[0]}</p>
+            <p>Antall upvote</p>
             </div>
             <div className="card-action">
-              <a><button> </button></a>
+              <Rating 
+              id={props.id}/>
             </div>
           </div>
         </div>

@@ -6,6 +6,7 @@ import sortReducer from "./SortReducer";
 import ModalReducer from "./ModalReducer";
 import pageReducer from "./PageReducer";
 import filterReducer from "./FilterReducer";
+import upvoteReducer from "./UpvoteReducer";
 
 
 const RootReducer = combineReducers({
@@ -15,7 +16,8 @@ const RootReducer = combineReducers({
     sortReducer: sortReducer,
     ModalReducer: ModalReducer,
     pageReducer: pageReducer,
-    filterReducer: filterReducer
+    filterReducer: filterReducer,
+    upvoteReducer: upvoteReducer
 
   });
   

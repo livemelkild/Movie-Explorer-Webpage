@@ -27,6 +27,9 @@ export const FILTER_HORROR= "FILTER_HORROR";
 export const FILTER_THRILLER = "FILTER_THRILLER";
 export const FILTER_COMEDY = "FILTER_COMEDY";
 
+export const SET_UPVOTE = 'SET_UPVOTE';
+export const REMOVE_UPVOTE = 'REMOVE_UPVOTE';
+
 export function filterDrama() {
     return {
         type: FILTER_DRAMA
@@ -149,6 +152,20 @@ export function resetPage() {
     }
 }
 
+export function setUpvote(id: string) {
+    return{
+        type: 'SET_UPVOTE',
+        payload: id
+    }
+}
+
+export function removeUpvote(id: string) {
+    return{
+        type: 'REMOVE_UPVOTE',
+        payload: id
+    }
+}
+
 /*
 export function fetchDataSuccess(res: any) {
     return{
@@ -173,7 +190,7 @@ export function fetchGetData() {
 */
 
 
-export default {searchInput, setLoading, fetchPending, fetchSuccess, fetchError, yearAsk, yearDesc, yearReset, openModal, closeModal, filterComedy, filterDrama, filterHorror, filterRomance, filterThriller};
+export default {searchInput, setLoading, fetchPending, fetchSuccess, fetchError, yearAsk, yearDesc, yearReset, openModal, closeModal, filterComedy, filterDrama, filterHorror, filterRomance, filterThriller, setUpvote, removeUpvote};
 
 
 export type Actions = ReturnType <typeof searchInput>

@@ -93,6 +93,7 @@ class Connection extends Component<{}, importState> {
             {items?.map(item => (
               <div  key={item._id}>
               <SingleMovie
+                    id={item._id}
                     title={item.title}
                     year={item.year}
                     users_rating={item.user_rating}

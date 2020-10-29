@@ -12,6 +12,10 @@ export class CharacterRoutes {
             this.character_controller.get_movie(req, res);
         })
 
+        app.put("/api/movie", (req: Request, res: Response) => {
+            this.character_controller.save_rating(req, res);
+        })
+
         app.get("/api/search/:title", (req: Request, res: Response) => {
             this.character_controller.get_movie_search(req, res);
         })
