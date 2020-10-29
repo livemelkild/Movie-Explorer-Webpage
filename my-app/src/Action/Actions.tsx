@@ -152,17 +152,17 @@ export function resetPage() {
     }
 }
 
-export function setUpvote(id: string) {
+export function setUpvote(title: string) {
     return{
         type: 'SET_UPVOTE',
-        payload: id
+        payload: title
     }
 }
 
-export function removeUpvote(id: string) {
+export function removeUpvote(title: string) {
     return{
         type: 'REMOVE_UPVOTE',
-        payload: id
+        payload: title
     }
 }
 

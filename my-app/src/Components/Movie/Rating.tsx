@@ -5,23 +5,24 @@ import { Dispatch } from "redux";
 
 
 interface iRating{
-    id: string | number
+    title: string | number,
+    upvote: number | string,
 }
 
 
 export default function Rating(props: iRating){
-    const id = props.id;
+    const title = props.title;
 
     const dispatch: Dispatch<any> = useDispatch();
 
-    const addUpvote = (action:any) => dispatch(action(id))
-    const deleteUpvote = (action:any) => dispatch(action(id))
+    const addUpvote = (action:any) => dispatch(action(title))
+    const deleteUpvote = (action:any) => dispatch(action(title))
 
     return(
         
         <div>
-            <button onClick = {() => addUpvote(setUpvote)}>Upvote</button>
-            <button onClick = {() => deleteUpvote(removeUpvote)}>Down vote</button>
+            <button onClick = {() => addUpvote(setUpvote)}>Upvote: {props.upvote}</button>
+            <button onClick = {() => deleteUpvote(removeUpvote)}>Down vote: {props.upvote}</button>
         </div>
 
     )

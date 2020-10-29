@@ -51,7 +51,7 @@ const Pages = () => {
             <button color="success" onClick={() => changePageButton("nextPage")} type="submit" value="PREV">NEXT</button>
             <button color="success" onClick={() => changePageButton("resetPage")} type="submit" value="PREV">RESET</button>
             
-            //legg inn knapper for å endre view
+
         </div>
     )
 

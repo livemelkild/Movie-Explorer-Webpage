@@ -2,24 +2,24 @@ import { SET_UPVOTE, REMOVE_UPVOTE } from "../Action/Actions";
 
 const initialState = {
     ranking: 0,
-    id: ""
+    title: ""
 }
 
 interface UpvoteState {
     ranking: number
-    id: string
+    title: string
 }
 
 export default function upvoteReducer(state: UpvoteState = initialState, action: { type: string, payload: any }) {
     switch(action.type) {
         case SET_UPVOTE:
             return {
-                id: action.payload,
+                title: action.payload,
                 ranking: 1
             }
         case REMOVE_UPVOTE:
             return {
-                id: action.payload,
+                title: action.payload,
                 ranking: -1
             }
             default:

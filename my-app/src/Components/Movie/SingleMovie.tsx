@@ -8,7 +8,8 @@ interface iMovie {
         year: string | number,
         users_rating: string | number,
         img_url: string,
-        genre: string
+        genre: string,
+        upvote: number | string,
 }
 
 const SingleMovie = (props: iMovie) => {
@@ -28,7 +29,10 @@ const genreList = props.genre;
             </div>
             <div className="card-action">
               <Rating 
-              id={props.id}/>
+              title={props.title}
+              upvote={props.upvote}
+              />
+
             </div>
           </div>
         </div>

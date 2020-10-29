@@ -17,7 +17,9 @@ interface ModalState {
   year: string,
   user_rating: string,
   img_url: string,
-  genre: string[]
+  genre: string[],
+  upvote: number,
+
 }
 
 type importState = {
@@ -99,6 +101,7 @@ class Connection extends Component<{}, importState> {
                     users_rating={item.user_rating}
                     img_url={item.img_url}
                     genre={item.genre}
+                    upvote={item.upvote}
                     />
               </div>
 
