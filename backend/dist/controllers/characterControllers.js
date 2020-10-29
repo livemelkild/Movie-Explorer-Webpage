@@ -9,10 +9,17 @@ class CharacterController {
     constructor() {
         this.character_service = new service_2.default();
     }
+<<<<<<< HEAD
     async save_rating(req, res) {
         const title = req.query.title;
         const ratings = parseInt(req.query.ranking);
         console.log(title);
+=======
+    save_rating(req, res) {
+        const id = req.query.id;
+        const ratings = parseInt(req.query.ranking);
+        console.log(id);
+>>>>>>> 52bba11da1a4c5313498877b04f2f9dc7a0771ec
         console.log(ratings);
         const updateRating = await schema_1.default.findOneAndUpdate({ title: title }, { upvote: ratings });
         service_1.successResponse('præver - get user successfull', await updateRating.findOne({ title: title }), res);
