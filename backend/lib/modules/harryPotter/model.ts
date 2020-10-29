@@ -7,6 +7,7 @@ export interface ICharacter {
     users_rating: String;
     img_url: String;
     genre: String[];
+    upvote: String;
     
     //modification_notes: ModificationNote[]
 }

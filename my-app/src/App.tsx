@@ -41,7 +41,7 @@ const App = () => {
     const [items, setItems] = useState();
     
     useEffect(() => {
-    fetch(`http://localhost:4000/api/movie?page=${page}&search=${searchState}&filter=${filter}&order=${order}&id=${title}&ranking=${ranking}`)
+    fetch(`http://localhost:4000/api/movie?page=${page}&search=${searchState}&filter=${filter}&order=${order}`)
       .then(res => res.json()) //format the resault to json
       .then(res => {
           console.log(res)

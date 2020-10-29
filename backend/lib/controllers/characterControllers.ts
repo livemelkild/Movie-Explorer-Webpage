@@ -13,31 +13,44 @@ export class CharacterController{
     private character_service: CharacterService = new CharacterService();
 
     
-    public save_rating(req: any, res: Response){
-        const id = req.query.id;
+    public async save_rating(req: any, res: Response){
+
+        const title = req.query.title;
         const ratings = parseInt(req.query.ranking);
-        console.log(id);
+        console.log(title);
         console.log(ratings);
 
-        const movies = movie.find({id: id})
+    
+        const updateRating = await movie.findOneAndUpdate({title: title}, {upvote: ratings})
 
-        const updateRating = movie.updateOne(
-                {_id: id},
+
+        successResponse('præver - get user successfull', await updateRating.findOne({title: title}),res)
+        //updateRating = await movie.findOne({title: title})
+                
+                /*.update(
+                
+                {title: title},
                 {$inc:
-                    {
-                        raiting: ratings
-                    }
+                    { upvote: ratings }
                 }
                 );
-        res.json(updateRating);
+            //successResponse('præver - get user successfull', updateRating.find({title: searchValue}).sort({year : order}).skip(page*limitView).limit(limitView),res);
+        }catch (err){
+            res.json({message:err})
+        }
+
+*/
     
-    }
+}
 
 
     public get_movie(req: any, res: Response) {
       //  const limitView = req.query.limit ? parseInt(req.query.limit) : 5;
         const id = req.query.id;
         console.log(id)
+        const ratings = parseInt(req.query.ranking);
+        console.log(ratings)
+
         const order = req.query.order ? parseInt(req.query.order) : 0;
 
         const limitView = req.query.limit ? parseInt(req.query.limit) : 5;

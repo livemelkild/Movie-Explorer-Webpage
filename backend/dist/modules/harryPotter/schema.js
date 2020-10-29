@@ -12,6 +12,7 @@ const movie = new Schema({
     users_rating: { type: String },
     img_url: { type: String },
     genre: { type: [String] },
+    upvote: { type: Number },
 });
 movie.plugin(mongoosePaginate);
 //skal referer til collection som vi lagde i databsen

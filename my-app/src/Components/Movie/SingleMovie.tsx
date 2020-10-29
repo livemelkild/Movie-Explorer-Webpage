@@ -4,13 +4,14 @@ import Rating from "./Rating"
 
 interface iMovie {
         id: string | number,
-        title: string | number,
+        title: string,
         year: string | number,
         users_rating: string | number,
         img_url: string,
         genre: string,
         upvote: number | string,
-}
+    }
+
 
 const SingleMovie = (props: iMovie) => {
 const genreList = props.genre;

@@ -9,22 +9,34 @@ class CharacterController {
     constructor() {
         this.character_service = new service_2.default();
     }
-    save_rating(req, res) {
-        const id = req.query.id;
-        const ratings = req.query.ranking;
-        console.log(id);
+    async save_rating(req, res) {
+        const title = req.query.title;
+        const ratings = parseInt(req.query.ranking);
+        console.log(title);
         console.log(ratings);
-        const movies = schema_1.default.find({ id: id });
-        const updateRating = schema_1.default.updateOne({ _id: id }, { $inc: {
-                raiting: ratings
-            }
-        });
-        res.json(updateRating);
+        const updateRating = await schema_1.default.findOneAndUpdate({ title: title }, { upvote: ratings });
+        service_1.successResponse('præver - get user successfull', await updateRating.findOne({ title: title }), res);
+        //updateRating = await movie.findOne({title: title})
+        /*.update(
+        
+        {title: title},
+        {$inc:
+            { upvote: ratings }
+        }
+        );
+    //successResponse('præver - get user successfull', updateRating.find({title: searchValue}).sort({year : order}).skip(page*limitView).limit(limitView),res);
+}catch (err){
+    res.json({message:err})
+}
+
+*/
     }
     get_movie(req, res) {
         //  const limitView = req.query.limit ? parseInt(req.query.limit) : 5;
         const id = req.query.id;
         console.log(id);
+        const ratings = parseInt(req.query.ranking);
+        console.log(ratings);
         const order = req.query.order ? parseInt(req.query.order) : 0;
         const limitView = req.query.limit ? parseInt(req.query.limit) : 5;
         const page = req.query.page ? parseInt(req.query.page) : 0;
