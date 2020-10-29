@@ -11,7 +11,7 @@ class CharacterController {
     }
     save_rating(req, res) {
         const id = req.query.id;
-        const ratings = req.query.ranking;
+        const ratings = parseInt(req.query.ranking);
         console.log(id);
         console.log(ratings);
         const movies = schema_1.default.find({ id: id });
