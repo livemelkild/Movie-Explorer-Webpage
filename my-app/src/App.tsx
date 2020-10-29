@@ -29,20 +29,23 @@ const App = () => {
     searchInput(search)
 
     const page = useSelector((state: RootStore) => state.pageReducer.page);
-
     const filterSingle = useSelector((state: RootStore) => state.filterReducer.filterby);
     const filter = [filterSingle]
+
+    const order = useSelector((state: RootStore) => state.sortReducer.order);
+
+
 
     const [items, setItems] = useState();
     
     useEffect(() => {
-    fetch(`http://localhost:4000/api/movie?page=${page}&search=${searchState}&filter=${filter}`)
+    fetch(`http://localhost:4000/api/movie?page=${page}&search=${searchState}&filter=${filter}&order=${order}`)
       .then(res => res.json()) //format the resault to json
       .then(res => {
           console.log(res)
           console.log(page)
           setItems(res.DATA)
-          });}, [page, searchState, filterSingle]);
+          });}, [page, searchState, filterSingle, order]);
 
 
 

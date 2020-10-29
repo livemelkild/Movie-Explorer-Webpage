@@ -1,8 +1,8 @@
-import { YEAR_ASC, YEAR_DESC, TITLE_ASC, TITLE_DESC } from "../Action/Actions";
+import { YEAR_ASC, YEAR_DESC, YEAR_RESET } from "../Action/Actions";
 
 const initialState = {
     sortBy: 'Year',
-    order: -1
+    order: 0
 }
 
 interface SortState {
@@ -10,31 +10,22 @@ interface SortState {
     order: number
 }
 
-export function sortReducer(state: SortState = initialState, action: { type: string }) {
+export default function sortReducer(state: SortState = initialState, action: { type: string }) {
     switch(action.type) {
         case YEAR_ASC:
             return {
                 ...state,
-                sortBy: 'Year',
                 order: -1
             }
         case YEAR_DESC:
             return {
                 ...state,
-                sortBy: 'Year',
                 order: 1
             }
-        case TITLE_ASC:
+        case YEAR_RESET:
             return {
                 ...state,
-                sortBy: 'Title',
-                order: 1
-            }
-        case TITLE_DESC:
-            return {
-                ...state,
-                sortBy: 'Title',
-                order: -1
+                order: 0
             }
             default:
                 return{
@@ -44,4 +35,4 @@ export function sortReducer(state: SortState = initialState, action: { type: str
       
     }
 
-    export default sortReducer; 
+    export const selectOrder = (state: number) => state;

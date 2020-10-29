@@ -16,8 +16,7 @@ export class CharacterController{
     public get_movie(req: any, res: Response) {
       //  const limitView = req.query.limit ? parseInt(req.query.limit) : 5;
 
-        const sort = req.query.sort ? req.query.sort : 'year';
-        const order = req.query.order ? req.query.order : '-1';
+        const order = req.query.order ? parseInt(req.query.order) : 0;
 
         const limitView = req.query.limit ? parseInt(req.query.limit) : 5;
         const page = req.query.page ? parseInt(req.query.page) : 0;
@@ -32,9 +31,14 @@ export class CharacterController{
 
         const filter = req.query.filter ? req.query.filter : "";
         console.log(filter)
+
+        console.log("utenfor: " + order)
+        
+
+
         if (filter != ""){
             console.log(filter)
-            movie.find({genre: { "$in" : filter}}, (err: any, user_data: ICharacter) => {
+            movie.find({genre: filter}, (err: any, user_data: ICharacter) => {
                 if (err) {
                     mongoError(err, res);
                 } else {
@@ -44,8 +48,28 @@ export class CharacterController{
             }).skip(page*limitView).limit(limitView)
 
         }
-
-        if (search != "" ){
+        else if (order === 1){
+            console.log("innenfor: " + order)
+            movie.find({}, (err: any, user_data: ICharacter) => {
+                if (err) {
+                    mongoError(err, res);
+                } else {
+                   // res.json(user_data);
+                    successResponse('get user successfull', user_data, res);
+                }
+            }).sort({year : 1}).skip(page*limitView).limit(limitView)
+        } else if (order === -1){
+            console.log("innenfor: " + order)
+            movie.find({}, (err: any, user_data: ICharacter) => {
+                if (err) {
+                    mongoError(err, res);
+                } else {
+                   // res.json(user_data);
+                    successResponse('get user successfull', user_data, res);
+                }
+            }).sort({year : -1}).skip(page*limitView).limit(limitView)
+        }
+        else if (search != "" ){
             movie.find({title: searchValue}, (err: any, user_data: ICharacter) => {
                 if (err) {
                     mongoError(err, res);
@@ -58,7 +82,6 @@ export class CharacterController{
         }
         //laster all filmer
         else{
-            
             movie.find({}, (err: any, user_data: ICharacter) => {
                 if (err) {
                     mongoError(err, res);

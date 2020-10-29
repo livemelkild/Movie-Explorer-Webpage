@@ -15,8 +15,8 @@ export const SEARCH = "SEARCH";
 
 export const YEAR_ASC = 'YEAR_ASC';
 export const YEAR_DESC = 'YEAR_DESC';
-export const TITLE_ASC = 'TITLE_ASC';
-export const TITLE_DESC = 'TITLE_DESC';
+export const YEAR_RESET = 'YEAR_RESET';
+
 
 export const OPEN_MODAL = 'OPEN_MODAL';
 export const CLOSE_MODAL = 'CLOSE_MODAL';
@@ -112,14 +112,9 @@ export function yearDesc() {
         type: YEAR_DESC,
     }
 }
-export function titleAsk() {
+export function yearReset() {
     return {
-        type: TITLE_ASC,
-    }
-}
-export function titleDesc() {
-    return {
-        type: TITLE_DESC,
+        type: YEAR_RESET,
     }
 }
 
@@ -178,7 +173,7 @@ export function fetchGetData() {
 */
 
 
-export default {searchInput, setLoading, fetchPending, fetchSuccess, fetchError, yearAsk, yearDesc, titleAsk, titleDesc, openModal, closeModal, filterComedy, filterDrama, filterHorror, filterRomance, filterThriller};
+export default {searchInput, setLoading, fetchPending, fetchSuccess, fetchError, yearAsk, yearDesc, yearReset, openModal, closeModal, filterComedy, filterDrama, filterHorror, filterRomance, filterThriller};
 
 
 export type Actions = ReturnType <typeof searchInput>
