@@ -23,52 +23,54 @@ class CharacterController {
         const filter = req.query.filter ? req.query.filter : "";
         console.log(filter);
         console.log("utenfor: " + order);
-        if (filter != "") {
-            console.log(filter);
-            schema_1.default.find({ genre: filter }, (err, user_data) => {
-                if (err) {
-                    service_1.mongoError(err, res);
-                }
-                else {
-                    // res.json(user_data);
-                    service_1.successResponse('get user successfull', user_data, res);
-                }
-            }).skip(page * limitView).limit(limitView);
-        }
-        else if (order === 1) {
-            console.log("innenfor: " + order);
-            schema_1.default.find({}, (err, user_data) => {
-                if (err) {
-                    service_1.mongoError(err, res);
-                }
-                else {
-                    // res.json(user_data);
-                    service_1.successResponse('get user successfull', user_data, res);
-                }
-            }).sort({ year: 1 }).skip(page * limitView).limit(limitView);
-        }
-        else if (order === -1) {
-            console.log("innenfor: " + order);
-            schema_1.default.find({}, (err, user_data) => {
-                if (err) {
-                    service_1.mongoError(err, res);
-                }
-                else {
-                    // res.json(user_data);
-                    service_1.successResponse('get user successfull', user_data, res);
-                }
-            }).sort({ year: -1 }).skip(page * limitView).limit(limitView);
-        }
-        else if (search != "") {
-            schema_1.default.find({ title: searchValue }, (err, user_data) => {
-                if (err) {
-                    service_1.mongoError(err, res);
-                }
-                else {
-                    // res.json(user_data);
-                    service_1.successResponse('get user successfull', user_data, res);
-                }
-            }).skip(page * limitView).limit(limitView);
+        if (search != "") {
+            if (filter != "") {
+                console.log(filter);
+                schema_1.default.find({ genre: filter, title: searchValue }, (err, user_data) => {
+                    if (err) {
+                        service_1.mongoError(err, res);
+                    }
+                    else {
+                        // res.json(user_data);
+                        service_1.successResponse('get user successfull', user_data, res);
+                    }
+                }).skip(page * limitView).limit(limitView);
+            }
+            else if (order === 1) {
+                console.log("innenfor: " + order);
+                schema_1.default.find({ title: searchValue }, (err, user_data) => {
+                    if (err) {
+                        service_1.mongoError(err, res);
+                    }
+                    else {
+                        // res.json(user_data);
+                        service_1.successResponse('get user successfull', user_data, res);
+                    }
+                }).sort({ year: 1 }).skip(page * limitView).limit(limitView);
+            }
+            else if (order === -1) {
+                console.log("innenfor: " + order);
+                schema_1.default.find({ title: searchValue }, (err, user_data) => {
+                    if (err) {
+                        service_1.mongoError(err, res);
+                    }
+                    else {
+                        // res.json(user_data);
+                        service_1.successResponse('get user successfull', user_data, res);
+                    }
+                }).sort({ year: -1 }).skip(page * limitView).limit(limitView);
+            }
+            else {
+                schema_1.default.find({ title: searchValue }, (err, user_data) => {
+                    if (err) {
+                        service_1.mongoError(err, res);
+                    }
+                    else {
+                        // res.json(user_data);
+                        service_1.successResponse('get user successfull', user_data, res);
+                    }
+                }).skip(page * limitView).limit(limitView);
+            }
         }
         //laster all filmer
         else {

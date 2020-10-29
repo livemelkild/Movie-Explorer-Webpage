@@ -13,6 +13,9 @@ export class CharacterController{
     private character_service: CharacterService = new CharacterService();
 
     
+
+
+
     public get_movie(req: any, res: Response) {
       //  const limitView = req.query.limit ? parseInt(req.query.limit) : 5;
 
@@ -36,48 +39,53 @@ export class CharacterController{
         
 
 
-        if (filter != ""){
-            console.log(filter)
-            movie.find({genre: filter}, (err: any, user_data: ICharacter) => {
-                if (err) {
-                    mongoError(err, res);
-                } else {
-                   // res.json(user_data);
-                    successResponse('get user successfull', user_data, res);
-                }
-            }).skip(page*limitView).limit(limitView)
 
-        }
-        else if (order === 1){
-            console.log("innenfor: " + order)
-            movie.find({}, (err: any, user_data: ICharacter) => {
-                if (err) {
-                    mongoError(err, res);
-                } else {
-                   // res.json(user_data);
-                    successResponse('get user successfull', user_data, res);
-                }
-            }).sort({year : 1}).skip(page*limitView).limit(limitView)
-        } else if (order === -1){
-            console.log("innenfor: " + order)
-            movie.find({}, (err: any, user_data: ICharacter) => {
-                if (err) {
-                    mongoError(err, res);
-                } else {
-                   // res.json(user_data);
-                    successResponse('get user successfull', user_data, res);
-                }
-            }).sort({year : -1}).skip(page*limitView).limit(limitView)
-        }
-        else if (search != "" ){
-            movie.find({title: searchValue}, (err: any, user_data: ICharacter) => {
-                if (err) {
-                    mongoError(err, res);
-                } else {
-                   // res.json(user_data);
-                    successResponse('get user successfull', user_data, res);
-                }
-            }).skip(page*limitView).limit(limitView)
+        if (search != "" ){
+            
+
+                
+            if (filter != ""){
+                console.log(filter)
+                movie.find({genre: filter, title: searchValue}, (err: any, user_data: ICharacter) => {
+                    if (err) {
+                        mongoError(err, res);
+                    } else {
+                    // res.json(user_data);
+                        successResponse('get user successfull', user_data, res);
+                    }
+                }).skip(page*limitView).limit(limitView)
+
+            }
+            else if (order === 1){
+                console.log("innenfor: " + order)
+                movie.find({title: searchValue}, (err: any, user_data: ICharacter) => {
+                    if (err) {
+                        mongoError(err, res);
+                    } else {
+                    // res.json(user_data);
+                        successResponse('get user successfull', user_data, res);
+                    }
+                }).sort({year : 1}).skip(page*limitView).limit(limitView)
+            } else if (order === -1){
+                console.log("innenfor: " + order)
+                movie.find({title: searchValue}, (err: any, user_data: ICharacter) => {
+                    if (err) {
+                        mongoError(err, res);
+                    } else {
+                    // res.json(user_data);
+                        successResponse('get user successfull', user_data, res);
+                    }
+                }).sort({year : -1}).skip(page*limitView).limit(limitView)
+            } else {
+                movie.find({title: searchValue}, (err: any, user_data: ICharacter) => {
+                    if (err) {
+                        mongoError(err, res);
+                    } else {
+                    // res.json(user_data);
+                        successResponse('get user successfull', user_data, res);
+                    }
+                }).skip(page*limitView).limit(limitView)
+            }
 
         }
         //laster all filmer
