@@ -21,19 +21,25 @@ export const SearchBar = () => {
       const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => setSearch(event.target.value);
 
       const handleSubmit = () => dispatch(searchInput(search));
-
+      const [options, openOptions] = useState(false);
 
 
     return (
         <div className= "total">
 
         
-            <button onClick = {() => handleSubmit()}>
+            <button onClick = {() => handleSubmit() && openOptions(true)}>
                 submit
             </button>
             <input type="search" onChange={handleChange} placeholder="Søk på filmer du leter etter" name="search"></input>
-
+        {options ?
+            <div>
             <SearchSort />
+            </div>
+            :
+            <div>
+            </div>
+        }
         </div>
         )
 }
