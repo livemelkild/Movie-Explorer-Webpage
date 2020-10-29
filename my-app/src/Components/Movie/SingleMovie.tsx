@@ -30,6 +30,7 @@ const [showInfo, openInfo] = useState(false);
             {showInfo ?
 
             <div className="card-content">
+              <button onClick={() => openInfo(false) }>Hide Info</button>
               <span className="card-title" color = "black">{props.title}</span>
               <p> Year: {props.year}, Genre: {printList}</p>
               <p>Antall upvote</p>
@@ -37,7 +38,7 @@ const [showInfo, openInfo] = useState(false);
                 <Rating 
                 id={props.id}/>
             </div>
-            <button onClick={() => openInfo(false) }>Hide Info</button>
+            
             </div>
             :
             <div> 
