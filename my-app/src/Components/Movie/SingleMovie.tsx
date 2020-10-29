@@ -31,8 +31,9 @@ const [showInfo, openInfo] = useState(false);
             </div>
             {showInfo ?
 
-            <div className="card-content">
-              <button onClick={() => openInfo(false) }>Hide Info</button>
+            <div className="card-info">
+              <button className="show" onClick={() => openInfo(false) }>Hide Info</button>
+              <br/>
               <span className="card-title" color = "black">{props.title}</span>
               <p> Year: {props.year}, Genre: {printList}</p>
               <p>Antall upvote</p>

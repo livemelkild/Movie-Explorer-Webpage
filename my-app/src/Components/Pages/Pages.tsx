@@ -6,6 +6,7 @@ import { Dispatch } from "redux";
 import { RootStore } from "../../store";
 
 import { nextPage, prevPage, resetPage } from '../../Action/Actions'
+import "./Pages.css"
 
 interface iProps{
     page: number;
@@ -48,8 +49,8 @@ const Pages = () => {
         <div className="buttons">
           {/*  <p>Page: { pageState }</p>*/}
             <button color="success" onClick={() => changePageButton("prevPage" )} type="submit" value="PREV">PREV</button>
-            <button color="success" onClick={() => changePageButton("nextPage")} type="submit" value="PREV">NEXT</button>
             <button color="success" onClick={() => changePageButton("resetPage")} type="submit" value="PREV">RESET</button>
+            <button color="success" onClick={() => changePageButton("nextPage")} type="submit" value="PREV">NEXT</button>
             
 
         </div>

@@ -73,7 +73,7 @@ const App = () => {
 */
   return (
     <div className="App">
-      <Header   text = "header"/>
+      <Header   text = "Find your movie"/>
       <SearchBar />
         <div className="container">
         {items?.map((item:any) => (

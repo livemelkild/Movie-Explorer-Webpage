@@ -20,17 +20,17 @@ export const SearchSort = () => {
                 {options ?
                     <div className = "sort">
                     <p>Sort</p>
-                        <button color="info" onClick={() => callSortFunction(yearAsk)}>New - Old</button>
-                        <button color="info" onClick={() => callSortFunction(yearDesc)}>Old - New</button>
-                        <button color="info" onClick={() => callSortFunction(yearReset)}>Unorderd</button>
+                        <button onClick={() => callSortFunction(yearAsk)}>New - Old</button>
+                        <button onClick={() => callSortFunction(yearDesc)}>Old - New</button>
+                        <button onClick={() => callSortFunction(yearReset)}>Unorderd</button>
 
                         <br/>
                         <p>Filter</p>
-                        <button color="info" onClick={() => callFilterFunction(filterComedy)}>Comedy</button>
-                        <button color="info" onClick={() => callFilterFunction(filterDrama)}>Drama</button>
-                        <button color="info" onClick={() => callFilterFunction(filterHorror)}>Horror</button>
-                        <button color="info" onClick={() => callFilterFunction(filterRomance)}>Romance</button>
-                        <button color="info" onClick={() => callFilterFunction(filterThriller)}>Thriller</button>
+                        <button onClick={() => callFilterFunction(filterComedy)}>Comedy</button>
+                        <button onClick={() => callFilterFunction(filterDrama)}>Drama</button>
+                        <button onClick={() => callFilterFunction(filterHorror)}>Horror</button>
+                        <button onClick={() => callFilterFunction(filterRomance)}>Romance</button>
+                        <button onClick={() => callFilterFunction(filterThriller)}>Thriller</button>
                         <br/>
                         <button onClick={() => setOptions(false) }>Hide filter</button>
                     </div>
