@@ -11,10 +11,6 @@ import './SearchBar.css';
 
 // tar inn search som er inputet brukeren skriver inn
 export const SearchBar = () => {
-    
-
-
-
 
     const dispatch: Dispatch<any> = useDispatch();
       // Annen mulig løsning: 
@@ -29,19 +25,48 @@ export const SearchBar = () => {
 
     return (
         <div className= "total">
-
+            {/*
+            <nav>
+                <div className="nav-wrapper">
+                <form>
+                    <div className="input-field">
+                    <input type="search" onChange={handleChange} placeholder="Søk på filmer du leter etter" name="search"></input>
         
-            <button onClick = {() => handleSubmit()}>
-                submit
-            </button>
+                    <label className="label-icon"><i className="material-icons"><button onClick = {() => handleSubmit()}>sumbit 2</button></i></label>
+                    <i className="material-icons">close</i>
+                    </div>
+            {search == "" ? 
+                <div/>
+                :
+                <SearchSort />
+            }
+                    
+
+                </form>
+                </div>
+           
+            </nav>
+
+         */} 
+         
+            
             <input type="search" onChange={handleChange} placeholder="Søk på filmer du leter etter" name="search"></input>
+            <button className="waves-effect btn  blue darken-1" type="submit" name="action" onClick = {() => handleSubmit()}>
+                submit
+                <i className="material-icons right">send</i>
+            </button>
+
+
         {search == "" ? 
         <div/>
                 :
 
                 <SearchSort />
             }
+        
         </div>
+        
+        
         )
 }
 

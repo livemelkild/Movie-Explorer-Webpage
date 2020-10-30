@@ -31,7 +31,7 @@ function App(){
 
 
   return (
-    <div className="App">
+    <div  className="card-panel blue-grey darken-1">
       <Router>
         <Switch>
 

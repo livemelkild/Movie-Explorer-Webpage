@@ -60,9 +60,9 @@ export default function Rating(props: iRating){
     return(
         
         <div>
-            <button onClick = {() => changeUpvote("setUpvote")}>Upvote</button>
-            <button onClick = {() => changeUpvote("removeUpvote")}>Down vote</button>
-            <p>Movie rating: {props.upvote}</p>
+            <button className="btn-floating btn-large waves-effect waves-light teal accent-3" onClick = {() => changeUpvote("setUpvote")}>like</button>
+            <button className="btn-floating btn-large waves-effect waves-light deep-orange lighten-1" onClick = {() => changeUpvote("removeUpvote")}>dislike</button>
+            <p>Likes: {props.upvote}</p>
         </div>
 
     )

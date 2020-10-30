@@ -19,25 +19,25 @@ export const SearchSort = () => {
             <div>
                 {options ?
                     <div className = "sort">
+                        <button className="waves-effect btn teal darken-4" type="submit" name="action" onClick={() => setOptions(false) }>Hide filter</button>
                     <p>Sort</p>
-                        <button onClick={() => callSortFunction(yearAsk)}>New - Old</button>
-                        <button onClick={() => callSortFunction(yearDesc)}>Old - New</button>
-                        <button onClick={() => callSortFunction(yearReset)}>Unorderd</button>
+                        <button className="waves-effect btn" type="submit" name="action" onClick={() => callSortFunction(yearAsk)}>New - Old</button>
+                        <button className="waves-effect btn" type="submit" name="action" onClick={() => callSortFunction(yearDesc)}>Old - New</button>
+                        <button className="waves-effect btn" type="submit" name="action" onClick={() => callSortFunction(yearReset)}>Unorderd</button>
 
                         <br/>
                         <p>Filter</p>
-                        <button onClick={() => callFilterFunction(filterComedy)}>Comedy</button>
-                        <button onClick={() => callFilterFunction(filterDrama)}>Drama</button>
-                        <button onClick={() => callFilterFunction(filterHorror)}>Horror</button>
-                        <button onClick={() => callFilterFunction(filterRomance)}>Romance</button>
-                        <button onClick={() => callFilterFunction(filterThriller)}>Thriller</button>
+                        <button className="waves-effect btn light-blue accent-4" type="submit" name="action" onClick={() => callFilterFunction(filterComedy)}>Comedy</button>
+                        <button className="waves-effect btn light-blue accent-4" type="submit" name="action" onClick={() => callFilterFunction(filterDrama)}>Drama</button>
+                        <button className="waves-effect btn light-blue accent-4" type="submit" name="action" onClick={() => callFilterFunction(filterHorror)}>Horror</button>
+                        <button className="waves-effect btn light-blue accent-4" type="submit" name="action" onClick={() => callFilterFunction(filterRomance)}>Romance</button>
+                        <button className="waves-effect btn light-blue accent-4" type="submit" name="action" onClick={() => callFilterFunction(filterThriller)}>Thriller</button>
                         <br/>
-                        <button onClick={() => setOptions(false) }>Hide filter</button>
                     </div>
                 :
                     <div>
                     
-                    <button onClick={() => setOptions(true)}>Show filter</button>
+                    <button className="waves-effect btn teal darken-4" type="submit" name="action" onClick={() => setOptions(true)}>Show filter</button>
                 </div> }
         </div>
         )

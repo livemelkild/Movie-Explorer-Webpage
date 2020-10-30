@@ -48,9 +48,9 @@ const Pages = () => {
     return(
         <div className="buttons">
           {/*  <p>Page: { pageState }</p>*/}
-            <button color="success" onClick={() => changePageButton("prevPage" )} type="submit" value="PREV">PREV</button>
-            <button color="success" onClick={() => changePageButton("resetPage")} type="submit" value="PREV">RESET</button>
-            <button color="success" onClick={() => changePageButton("nextPage")} type="submit" value="PREV">NEXT</button>
+            <button className="waves-effect btn" type="submit" name="action"  color="success" onClick={() => changePageButton("prevPage" )} value="PREV">PREV</button>
+            <button className="waves-effect btn" type="submit" name="action"  color="success" onClick={() => changePageButton("resetPage")} value="PREV">RESET</button>
+            <button className="waves-effect btn" type="submit" name="action"  color="success" onClick={() => changePageButton("nextPage")}  value="PREV">NEXT</button>
             
 
         </div>

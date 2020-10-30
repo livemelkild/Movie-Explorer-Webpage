@@ -18,16 +18,16 @@ function Start_page(){
 
     return(
         <nav>
-        <div className="nav-wrapper">
-          <a href="#" className="brand-logo">Movie Expolrer</a>
+        <div className="nav-wrapper green darken-3">
+        <a href="#!" className="brand-logo center">Movie Expolrer</a>
           <ul id="nav-mobile" className="right hide-on-med-and-down">
           <Link className = "start_link" to="/next">
-            <li><a>neste side</a></li>
+            <li><a> <b>Search</b></a></li>
           </Link>
           </ul>
         </div>
       <div>
-        <h1 className="homepage"> Movies</h1>
+        <h1 className="homepage"> </h1>
         <div className="slider">
         <ul className="slides">
         <li>
@@ -37,24 +37,18 @@ function Start_page(){
           <h5 className="light grey-text text-lighten-3"></h5>
         </div>
       </li>
-      <li>
-        <img src="https://media1.s-nbcnews.com/i/newscms/2020_41/1617847/mean-girls-phone-call-te-main-201009_be413d5d822ab2b147227eefb0e84813.jpg" /> 
-        <div className="caption left-align">
-          <h3>Comedy?</h3>
-          <h5 className="light grey-text text-lighten-3" ></h5>
-        </div>
-      </li>
+      
       <li>
         <img src="https://www.barnevakten.no/wp-content/uploads/2010/11/harry-potter-deathly-hallows-1-1.jpg" /> 
-        <div className="caption right-align">
-          <h3>Magic?</h3>
+        <div className="caption right-align ">
+          <h3> <b> Comedy, Action, Magic? </b></h3>
           <h5 className="light grey-text text-lighten-3"></h5>
         </div>
       </li>
       <li>
       <img src="https://s3-us-west-2.amazonaws.com/flx-editorial-wordpress/wp-content/uploads/2018/03/13153742/RT_300EssentialMovies_700X250.jpg" /> 
         <div className="caption center-align">
-          <h3>No limits...</h3>
+          <h3> <b>No limits... </b> </h3>
           <h5 className="light grey-text text-lighten-3"></h5>
         </div>
         </li>

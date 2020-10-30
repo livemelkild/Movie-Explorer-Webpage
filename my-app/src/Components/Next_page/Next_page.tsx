@@ -8,7 +8,7 @@ import SingleMovie from "../Movie/SingleMovie"
 import SearchBar from "../Search/SearchBar";
 import Header from "../Header/Header";
 import 'materialize-css/dist/css/materialize.min.css'
-import {Link} from "react-router-dom";
+
  
 
 function NextPage() {
@@ -39,7 +39,7 @@ function NextPage() {
 
     return(
         <div>
-        <Header   text = "header"/>
+        <Header   text = "Movie Explorer"/>
         <SearchBar />
         <div className="container">
         {items?.map((item:any) => (
@@ -57,6 +57,7 @@ function NextPage() {
         ))}
         
         </div>
+        
     <Pages />
     </div>
     )

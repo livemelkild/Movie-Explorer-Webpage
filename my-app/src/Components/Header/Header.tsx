@@ -2,6 +2,7 @@ import React from "react";
 import './Header.css';
 import {Link} from "react-router-dom";
 
+
 interface PropsType {
     text: string
 }
@@ -9,11 +10,16 @@ interface PropsType {
 const Header = (porps: PropsType) => {
     console.log("hallo");
     return (
-        <div className="header">
-            <header className="App-header">
-                <h1>{porps.text}</h1>
+        <nav>
+            <div className="nav-wrapper  b light-blue darken-3">
+            <header className="App-header" >
+            <a href="#!" className="brand-logo center">{porps.text}</a>
+            <Link className = "back_link" to="/">
+            <button className="waves-effect btn light-blue darken-3" type="submit" name="action" > HOME</button>
+        </Link>
             </header>
-        </div>
+            </div>
+        </nav>
     )
 
 }
