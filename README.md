@@ -1,5 +1,4 @@
 Løsning <br/>
-
 Vi har valgt å lage en nettside der man kan få opp 62 058 filmer. 
 Nettsiden har en startside som presenterer temaet. Når man kommer inn på siden lastes filmene i 
 tilfeldig rekkefølge og man kan navigere seg mellom sider og komme tilbake til første side med knappene 
