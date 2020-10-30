@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import "./SingleMovie.css"
+
 import Rating from "./Rating"
 import "../../materialize/css/materialize.css"
 import "../../materialize/css/materialize.min.css"
