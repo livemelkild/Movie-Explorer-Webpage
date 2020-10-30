@@ -24,14 +24,12 @@ function NextPage() {
 
     const order = useSelector((state: RootStore) => state.sortReducer.order);
 
-    const id = useSelector((state: RootStore) => state.upvoteReducer.id);
-    const ranking = useSelector((state: RootStore) => state.upvoteReducer.ranking);
 
 
     const [items, setItems] = useState();
     
     useEffect(() => {
-    fetch(`http://localhost:4000/api/movie?page=${page}&search=${searchState}&filter=${filter}&order=${order}&id=${id}&ranking=${ranking}`)
+    fetch(`http://localhost:4000/api/movie?page=${page}&search=${searchState}&filter=${filter}&order=${order}`)
       .then(res => res.json()) //format the resault to json
       .then(res => {
           console.log(res)
@@ -53,6 +51,7 @@ function NextPage() {
                 users_rating={item.user_rating}
                 img_url={item.img_url}
                 genre={item.genre}
+                upvote={item.upvote}
                 />
               </div>
         ))}
