@@ -63,7 +63,9 @@ export default function Rating(props: iRating){
         <div>
             <button onClick = {() => changeUpvote("setUpvote")}>Upvote</button>
             <button onClick = {() => changeUpvote("removeUpvote")}>Down vote</button>
+            
             <p>Movie rating: {ranking}</p>
+            {}
         </div>
 
     )
