@@ -2,7 +2,6 @@ import Connection from "./database_connection/connection"
 import React, {useState, Component, useEffect} from 'react';
 import SearchBar from "./Components/Search/SearchBar";
 import SearchSort from "./Components/Search/SearchSort";
-import Header from "./Components/Header/Header";
 import "./App.css"
 
 import { Dispatch } from "redux";
@@ -15,81 +14,33 @@ import Pages from "./Components/Pages/Pages";
 import SingleMovie from "./Components/Movie/SingleMovie"
 import { isTemplateSpan } from "typescript";
 
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+//import Startepage from "../public/therdpart/index";
+import Nextpage from "./Components/Next_page/Next_page";
+import Startpage from "./Components/Next_page/Start_page";
+import Header from "./Components/Header/Header";
+
+import "./materialize/css/materialize.css"
+import "./materialize/css/materialize.min.css"
 
 type importState = {
   items: {[key: string]: string}[];
   isLoaded: Boolean;
 }
 
-const App = () => {
-
-    const searchState = useSelector((state: RootStore) => state.searchReducer.search);
-    const [search, setSearch] = useState(searchState);
-
-    searchInput(search)
-
-    const page = useSelector((state: RootStore) => state.pageReducer.page);
-    const filterSingle = useSelector((state: RootStore) => state.filterReducer.filterby);
-    const filter = [filterSingle]
-
-    const order = useSelector((state: RootStore) => state.sortReducer.order);
-
-    const id = useSelector((state: RootStore) => state.upvoteReducer.id);
-    const ranking = useSelector((state: RootStore) => state.upvoteReducer.ranking);
+function App(){
 
 
-    const [items, setItems] = useState();
-    
-    useEffect(() => {
-    fetch(`http://localhost:4000/api/movie?page=${page}&search=${searchState}&filter=${filter}&order=${order}&id=${id}&ranking=${ranking}`)
-      .then(res => res.json()) //format the resault to json
-      .then(res => {
-          console.log(res)
-          console.log(page)
-          setItems(res.DATA)
-          });}, [page, searchState, filterSingle, order]);
-
-
-
-/*
-          useEffect(() => {
-            fetch(`http://localhost:4000/api/search/:title?filter=${filter}`)
-              .then(res => res.json()) //format the resault to json
-              .then(res => {
-                  console.log(res)
-                  console.log(page)
-                  setItems(res.DATA)
-                  });}, [filter]);
-
-    useEffect(() => {
-    fetch(`http://localhost:4000/api/movie/:title=${search}`)
-      .then(res => res.json()) //format the resault to json
-      .then(res => {
-          console.log(res)
-          console.log(page)
-          setItems(res.DATA)
-          });}, [search]);
-
-*/
   return (
     <div className="App">
-      <Header   text = "header"/>
-      <SearchBar />
-        <div className="container">
-        {items?.map((item:any) => (
-          <div key={item._id}>
-            <SingleMovie 
-                id={item._id}
-                title={item.title}
-                year={item.year}
-                users_rating={item.user_rating}
-                img_url={item.img_url}
-                genre={item.genre}
-                />
-              </div>
-        ))}
-    </div>
-      <Pages />
+      <Router>
+        <Switch>
+
+          <Route exact path="/" component={Startpage} />
+          <Route exact path="/next" component={Nextpage} />
+
+        </Switch>
+      </Router>
     </div>
   );
 }
