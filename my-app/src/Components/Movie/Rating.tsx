@@ -63,7 +63,11 @@ export default function Rating(props: iRating){
         <div>
             <button className="btn-floating btn-large waves-effect waves-light teal accent-3" onClick = {() => changeUpvote("setUpvote")}>like</button>
             <button className="btn-floating btn-large waves-effect waves-light deep-orange lighten-1" onClick = {() => changeUpvote("removeUpvote")}>dislike</button>
-            <p>Likes: {props.upvote}</p>
+            {ranking == NaN ? 
+            <p>Likes: 0</p>
+                :
+            <p>Likes: {ranking}</p>
+            }   
         </div>
 
     )
