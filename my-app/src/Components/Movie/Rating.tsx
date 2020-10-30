@@ -32,6 +32,7 @@ export default function Rating(props: iRating){
                 axios.put(`http://localhost:4000/api/upVote/${title}`)
 
                 const newRate = ranking + 1;
+                
                 setRanking(newRate);
 
                 console.log("slutt opp" + ranking)
@@ -62,7 +63,7 @@ export default function Rating(props: iRating){
         <div>
             <button onClick = {() => changeUpvote("setUpvote")}>Upvote</button>
             <button onClick = {() => changeUpvote("removeUpvote")}>Down vote</button>
-            <p>Movie rating: {props.upvote}</p>
+            <p>Movie rating: {ranking}</p>
         </div>
 
     )

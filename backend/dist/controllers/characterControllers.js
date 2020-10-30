@@ -12,12 +12,12 @@ class CharacterController {
     async up_rating(req, res) {
         const title = req.params.title;
         console.log("put func" + title);
-        schema_1.default.findOneAndUpdate({ _id: req.query.id }, { $inc: { upvote: 1 } }, { new: true }).then(data => service_1.successResponse("hei", data, res));
+        schema_1.default.findOneAndUpdate({ title: req.params.title }, { $inc: { upvote: 1 } }, { new: true }).then(data => service_1.successResponse("hei", data, res));
     }
     async down_rating(req, res) {
         const title = req.params.title;
         console.log(title);
-        schema_1.default.findOneAndUpdate({ _id: req.query.id }, { $inc: { upvote: -1 } }, { new: true }).then(data => service_1.successResponse("hade", data, res));
+        schema_1.default.findOneAndUpdate({ title: req.params.title }, { $inc: { upvote: -1 } }, { new: true }).then(data => service_1.successResponse("hade", data, res));
     }
     get_movie(req, res) {
         //  const limitView = req.query.limit ? parseInt(req.query.limit) : 5;
