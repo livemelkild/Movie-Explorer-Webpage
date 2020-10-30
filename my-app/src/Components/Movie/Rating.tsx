@@ -29,7 +29,7 @@ export default function Rating(props: iRating){
                 console.log(title)
                 console.log("start opp" + ranking)
 
-                axios.put(`http://localhost:4000/api/upVote/${title}}`)
+                axios.put(`http://localhost:4000/api/upVote/${title}`)
 
                 const newRate = ranking + 1;
                 setRanking(newRate);

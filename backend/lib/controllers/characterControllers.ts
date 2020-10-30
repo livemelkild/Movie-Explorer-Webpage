@@ -20,8 +20,7 @@ export class CharacterController{
 
     
         movie.findOneAndUpdate(
-            
-            {_id: req.query.id },
+            {title: req.params.title },
             { $inc: { upvote: 1}}, {new: true}
         ).then(data =>
             successResponse("hei", data, res));   
@@ -30,9 +29,10 @@ export class CharacterController{
     public async down_rating(req: any, res: Response){
         const title = req.params.title;
         console.log(title);
+       
 
         movie.findOneAndUpdate(
-            {_id: req.query.id },
+            {title: req.params.title },
             { $inc: { upvote: -1}}, {new: true}
         ).then(data =>
             successResponse("hade", data, res));
@@ -64,8 +64,6 @@ export class CharacterController{
 
         console.log("utenfor: " + order)
         
-
-
 
         if (search != "" ){
                             

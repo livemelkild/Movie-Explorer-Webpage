@@ -14,22 +14,13 @@ export class CharacterRoutes {
         })
 
         app.put("/api/upVote/:title", (req: Request, res: Response) => {
-            console.log("opppp")
-            movie.findOneAndUpdate(
-                {title: req.params.title },
-                { $inc: { upvote: 1}}, {new: true}
-            ).then(data =>
-                res.json);   
+            this.character_controller.up_rating(req, res)
             
         })
 
         app.put("/api/downVote/:title", (req: Request, res: Response) => {
-            console.log("need")
-            movie.findOneAndUpdate(
-                {title: req.params.title },
-                { $inc: { upvote: -1}}, {new: true}
-            ).then(data =>
-                res.json);
+
+            this.character_controller.down_rating(req, res)
         })
 
     }
