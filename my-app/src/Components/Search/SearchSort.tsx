@@ -1,8 +1,7 @@
 import { Dispatch } from "redux";
-import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { yearAsk, yearDesc, yearReset, filterComedy, filterDrama, filterHorror, filterRomance, filterThriller  } from "../../Action/Actions";
-import { RootStore } from "../../store";
 
 export const SearchSort = () => {
     const dispatch: Dispatch<any> = useDispatch();

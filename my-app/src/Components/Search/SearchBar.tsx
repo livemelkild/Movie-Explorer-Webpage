@@ -20,36 +20,9 @@ export const SearchBar = () => {
 
       const handleSubmit = () => dispatch(searchInput(search));
       
-      const [options, openOptions] = useState(false);
-
 
     return (
         <div className= "total">
-            {/*
-            <nav>
-                <div className="nav-wrapper">
-                <form>
-                    <div className="input-field">
-                    <input type="search" onChange={handleChange} placeholder="Søk på filmer du leter etter" name="search"></input>
-        
-                    <label className="label-icon"><i className="material-icons"><button onClick = {() => handleSubmit()}>sumbit 2</button></i></label>
-                    <i className="material-icons">close</i>
-                    </div>
-            {search == "" ? 
-                <div/>
-                :
-                <SearchSort />
-            }
-                    
-
-                </form>
-                </div>
-           
-            </nav>
-
-         */} 
-         
-            
             <input type="search" onChange={handleChange} placeholder="Søk på filmer du leter etter" name="search"></input>
             <button className="waves-effect btn  blue darken-1" type="submit" name="action" onClick = {() => handleSubmit()}>
                 submit
@@ -57,12 +30,11 @@ export const SearchBar = () => {
             </button>
 
 
-        {search == "" ? 
+        {search === "" ? 
         <div/>
                 :
-
                 <SearchSort />
-            }
+                }
         
         </div>
         

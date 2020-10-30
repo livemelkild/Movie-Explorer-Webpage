@@ -1,4 +1,3 @@
-import React from "react";
 import { NEXT_PAGE, PREV_PAGE, RESET_PAGE } from "../Action/Actions";
 
 const initialState = {

@@ -1,8 +1,6 @@
 import React, {useState} from "react";
-import { setUpvote, removeUpvote } from "../../Action/Actions";
 import { Dispatch } from "redux";
-import { useDispatch, useSelector } from "react-redux";
-import { RootStore } from "../../store";
+import { useDispatch } from "react-redux";
 
 import axios from 'axios'
 
@@ -20,54 +18,42 @@ export default function Rating(props: iRating){
     const [ranking, setRanking] = useState(props.upvote);
     const [vote, setVote] = useState(0);
 
-    const changeUpvote = (action: string )=> {
+    const changeUpvote = (action: string ) => {
+        if (Number.isNaN(ranking)){
+            setRanking(0)
+        }
         if(action === "setUpvote"){
-            if (vote == 1){
+            if (vote === 1){
                 console.log("already upvoted")
             }else{
                 setVote(1)
-                console.log(title)
-                console.log("start opp" + ranking)
 
                 axios.put(`http://localhost:4000/api/upVote/${title}`)
+                    .then(res => setRanking(res.data.DATA.upvote))
 
-                const newRate = ranking + 1;
-                
-                setRanking(newRate);
-
-                console.log("slutt opp" + ranking)
 
             }
 
         }else{
-            if (vote == -1){
+            if (vote === -1){
                 console.log("already down voted")
             }else{
                 setVote(-1)
-                console.log("start ned" + ranking)
                 axios.put(`http://localhost:4000/api/downVote/${title}`)
-                
-                const newRate = ranking -1;
-                setRanking(newRate)
-                console.log("slutt ned" + ranking)
+                .then(res => setRanking(res.data.DATA.upvote))
+
             }
-
-
         }
     }
-
-
 
     return(
         
         <div>
             <button className="btn-floating btn-large waves-effect waves-light teal accent-3" onClick = {() => changeUpvote("setUpvote")}>like</button>
             <button className="btn-floating btn-large waves-effect waves-light deep-orange lighten-1" onClick = {() => changeUpvote("removeUpvote")}>dislike</button>
-            {ranking == NaN ? 
-            <p>Likes: 0</p>
-                :
+
             <p>Likes: {ranking}</p>
-            }   
+       
         </div>
 
     )

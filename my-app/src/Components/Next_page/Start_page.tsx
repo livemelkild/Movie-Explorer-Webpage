@@ -19,7 +19,7 @@ function Start_page(){
     return(
         <nav>
         <div className="nav-wrapper green darken-3">
-        <a href="#!" className="brand-logo center">Movie Expolrer</a>
+        <a href="#!" className="brand-logo center">Movie Explorer</a>
           <ul id="nav-mobile" className="right hide-on-med-and-down">
           <Link className = "start_link" to="/next">
             <li><a> <b>Search</b></a></li>

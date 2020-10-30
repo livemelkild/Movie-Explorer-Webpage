@@ -1,6 +1,5 @@
-import React, {useState, Component, useEffect} from 'react';
-import { Dispatch } from "redux";
-import { useDispatch, useSelector } from "react-redux";
+import React, {useState, useEffect} from 'react';
+import { useSelector } from "react-redux";
 import { RootStore } from "../../store";
 import { searchInput } from "../../Action/Actions";
 import Pages from "../Pages/Pages";
