@@ -32,6 +32,7 @@ export default function Rating(props: iRating){
                 axios.put(`http://localhost:4000/api/upVote/${title}`)
 
                 const newRate = ranking + 1;
+                
                 setRanking(newRate);
 
                 console.log("slutt opp" + ranking)
