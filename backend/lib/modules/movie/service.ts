@@ -1,4 +1,4 @@
-import { ICharacter } from './model';
+import { IMovie } from './model';
 import movie from './schema';
 
 export default class CharacterService {

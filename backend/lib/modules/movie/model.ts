@@ -1,6 +1,6 @@
 //import { ModificationNote } from "../common/model";
 
-export interface ICharacter {
+export interface IMovie {
     _id: String;
     title: String;
     year: String;
