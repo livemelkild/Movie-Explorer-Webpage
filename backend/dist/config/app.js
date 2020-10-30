@@ -4,21 +4,17 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 //import { TestRoutes } from "../routes/test_routes";
-const common_routes_1 = require("../routes/common_routes");
-const character_routes_1 = require("../routes/character_routes");
+const movie_routes_1 = require("../routes/movie_routes");
 const cors = require("cors");
 class App {
     constructor() {
         this.mongoUrl = "mongodb://gruppe9:gruppe9@it2810-09.idi.ntnu.no:27017/mytestdatabase";
-        this.character_route = new character_routes_1.CharacterRoutes();
-        // private test_routes: TestRoutes = new TestRoutes();
-        this.common_routes = new common_routes_1.CommonRoutes();
+        this.movie_route = new movie_routes_1.MovieRoutes();
         this.app = express();
         this.config();
         this.mongoSetup();
-        this.character_route.route(this.app);
+        this.movie_route.route(this.app);
         //  this.test_routes.route(this.app);
-        this.common_routes.route(this.app);
     }
     config() {
         //gjør at man kan koble mellom forskjellige domener (localhost:4000 og 3000)

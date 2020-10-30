@@ -1,7 +1,6 @@
 import { Request, Response } from 'express';
 import { insufficientParameters, mongoError, successResponse, failureResponse } from '../modules/common/service';
 import { IMovie } from '../modules/movie/model';
-import CharacterService from '../modules/movie/service';
 import e = require('express');
 import movie from "../modules/movie/schema";
 
@@ -9,7 +8,6 @@ import movie from "../modules/movie/schema";
 
 export class MovieController{
 
-    private character_service: CharacterService = new CharacterService();
 
     
     public async up_rating(req: any, res: Response){
