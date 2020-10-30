@@ -9,7 +9,7 @@ interface iMovie {
         users_rating: string | number,
         img_url: string,
         genre: string,
-        upvote: number | string,
+        upvote: number,
     }
 
 

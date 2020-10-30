@@ -1,4 +1,3 @@
-import Connection from "./database_connection/connection"
 import React, {useState, Component, useEffect} from 'react';
 import SearchBar from "./Components/Search/SearchBar";
 import SearchSort from "./Components/Search/SearchSort";
@@ -35,7 +34,7 @@ const App = () => {
     const order = useSelector((state: RootStore) => state.sortReducer.order);
 
     const title = useSelector((state: RootStore) => state.upvoteReducer.title);
-    const ranking = useSelector((state: RootStore) => state.upvoteReducer.ranking);
+
 
 
     const [items, setItems] = useState();
@@ -47,7 +46,7 @@ const App = () => {
           console.log(res)
           console.log(page)
           setItems(res.DATA)
-          });}, [page, searchState, filterSingle, order, ranking]);
+          });}, [page, searchState, filterSingle, order]);
 
 
 

@@ -4,45 +4,65 @@ import { Dispatch } from "redux";
 import { useDispatch, useSelector } from "react-redux";
 import { RootStore } from "../../store";
 
+import axios from 'axios'
+
 
 interface iRating{
     title: string,
-    upvote: number | string,
+    upvote: number,
 }
 
 
 export default function Rating(props: iRating){
-    const title = props.title;
-    const [ranking, setRanking] = useState(0);
+    const [title, setTitle] = useState(props.title)
     const dispatch: Dispatch<any> = useDispatch();
 
-    
+    const [ranking, setRanking] = useState(props.upvote);
+    const [vote, setVote] = useState(0);
 
     const changeUpvote = (action: string )=> {
-        if(action == "setUpvote"){
-            dispatch(setUpvote(title))
-            setRanking(1);
-            fetchMe();
+        if(action === "setUpvote"){
+            if (vote == 1){
+                console.log("already upvoted")
+            }else{
+                setVote(1)
+                console.log(title)
+                console.log("start opp" + ranking)
+
+                axios.put(`http://localhost:4000/api/upVote/${title}}`)
+
+                const newRate = ranking + 1;
+                setRanking(newRate);
+
+                console.log("slutt opp" + ranking)
+
+            }
+
         }else{
-            dispatch(removeUpvote(title))
-            setRanking(-1);
-            fetchMe();
+            if (vote == -1){
+                console.log("already down voted")
+            }else{
+                setVote(-1)
+                console.log("start ned" + ranking)
+                axios.put(`http://localhost:4000/api/downVote/${title}`)
+                
+                const newRate = ranking -1;
+                setRanking(newRate)
+                console.log("slutt ned" + ranking)
+            }
+
+
         }
     }
-
-    const fetchMe = () => {fetch(`http://localhost:4000/api/movie?title=${title}&ranking=${ranking}`, {method: 'PUT'})
-    .then(res => res.json()) //format the resault to json
-    .then(res => {
-        console.log(res);
-        })};  
 
 
 
     return(
         
         <div>
-            <button onClick = {() => changeUpvote("setUpvote")}>Upvote: {props.upvote}</button>
-            <button onClick = {() => changeUpvote("removeUpvote")}>Down vote: {props.upvote}</button>
+            <button onClick = {() => changeUpvote("setUpvote")}>Upvote</button>
+            <button onClick = {() => changeUpvote("removeUpvote")}>Down vote</button>
+            <p>Movie rating: {props.upvote}</p>
         </div>
 
     )

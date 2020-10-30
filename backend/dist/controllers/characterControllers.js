@@ -9,27 +9,15 @@ class CharacterController {
     constructor() {
         this.character_service = new service_2.default();
     }
-    async save_rating(req, res) {
-        const title = req.query.title;
-        const ratings = parseInt(req.query.ranking);
+    async up_rating(req, res) {
+        const title = req.params.title;
+        console.log("put func" + title);
+        schema_1.default.findOneAndUpdate({ _id: req.query.id }, { $inc: { upvote: 1 } }, { new: true }).then(data => service_1.successResponse("hei", data, res));
+    }
+    async down_rating(req, res) {
+        const title = req.params.title;
         console.log(title);
-        console.log(ratings);
-        const updateRating = await schema_1.default.findOneAndUpdate({ title: title }, { upvote: ratings });
-        service_1.successResponse('præver - get user successfull', await updateRating.findOne({ title: title }), res);
-        //updateRating = await movie.findOne({title: title})
-        /*.update(
-        
-        {title: title},
-        {$inc:
-            { upvote: ratings }
-        }
-        );
-    //successResponse('præver - get user successfull', updateRating.find({title: searchValue}).sort({year : order}).skip(page*limitView).limit(limitView),res);
-}catch (err){
-    res.json({message:err})
-}
-
-*/
+        schema_1.default.findOneAndUpdate({ _id: req.query.id }, { $inc: { upvote: -1 } }, { new: true }).then(data => service_1.successResponse("hade", data, res));
     }
     get_movie(req, res) {
         //  const limitView = req.query.limit ? parseInt(req.query.limit) : 5;
