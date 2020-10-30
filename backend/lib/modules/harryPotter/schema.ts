@@ -14,6 +14,7 @@ const movie = new Schema(
         users_rating: {type: String},
         img_url: {type: String},
         genre: {type: [String]},
+        upvote: {type: Number},
         
     //    modification_notes: [ModificationNote]
 });

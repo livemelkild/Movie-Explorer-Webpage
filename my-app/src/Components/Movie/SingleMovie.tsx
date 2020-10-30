@@ -7,12 +7,14 @@ import "../../materialize/css/materialize.min.css"
 
 interface iMovie {
         id: string | number,
-        title: string | number,
+        title: string,
         year: string | number,
         users_rating: string | number,
         img_url: string,
-        genre: string
-}
+        genre: string,
+        upvote: number,
+    }
+
 
 const SingleMovie = (props: iMovie) => {
 const genreList = props.genre;
@@ -32,14 +34,18 @@ const [showInfo, openInfo] = useState(false);
             </div>
             {showInfo ?
 
-            <div className="card-content">
-              <button onClick={() => openInfo(false) }>Hide Info</button>
+            <div className="card-info">
+              <button className="show" onClick={() => openInfo(false) }>Hide Info</button>
+              <br/>
               <span className="card-title" color = "black">{props.title}</span>
               <p> Year: {props.year}, Genre: {printList}</p>
               <p>Antall upvote</p>
             <div className="card-action">
-                <Rating 
-                id={props.id}/>
+              <Rating 
+              title={props.title}
+              upvote={props.upvote}
+              />
+
             </div>
             
             </div>

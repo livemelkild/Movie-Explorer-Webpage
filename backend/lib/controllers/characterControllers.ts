@@ -13,34 +13,42 @@ export class CharacterController{
     private character_service: CharacterService = new CharacterService();
 
     
-    public save_rating(req: any, res: Response){
-        const id = req.query.id;
-        const ratings = parseInt(req.query.ranking);
-        console.log(id);
-        console.log(ratings);
+    public async up_rating(req: any, res: Response){
 
-        const movies = movie.find({id: id})
+        const title = req.params.title;
+        console.log("put func" + title);
 
-        const updateRating = movie.updateOne(
-                {_id: id},
-                {$inc:
-                    {
-                        raiting: ratings
-                    }
-                }
-                );
-        res.json(updateRating);
     
-    }
+        movie.findOneAndUpdate(
+            {title: req.params.title },
+            { $inc: { upvote: 1}}, {new: true}
+        ).then(data =>
+            successResponse("hei", data, res));   
+        }
+       
+    public async down_rating(req: any, res: Response){
+        const title = req.params.title;
+        console.log(title);
+       
 
+        movie.findOneAndUpdate(
+            {title: req.params.title },
+            { $inc: { upvote: -1}}, {new: true}
+        ).then(data =>
+            successResponse("hade", data, res));
+    }
+    
 
     public get_movie(req: any, res: Response) {
       //  const limitView = req.query.limit ? parseInt(req.query.limit) : 5;
         const id = req.query.id;
         console.log(id)
+        const ratings = parseInt(req.query.ranking);
+        console.log(ratings)
+
         const order = req.query.order ? parseInt(req.query.order) : 0;
 
-        const limitView = req.query.limit ? parseInt(req.query.limit) : 5;
+        const limitView = req.query.limit ? parseInt(req.query.limit) : 12;
         const page = req.query.page ? parseInt(req.query.page) : 0;
         const search = req.query.search ? req.query.search : "";
 
@@ -56,8 +64,6 @@ export class CharacterController{
 
         console.log("utenfor: " + order)
         
-
-
 
         if (search != "" ){
                             

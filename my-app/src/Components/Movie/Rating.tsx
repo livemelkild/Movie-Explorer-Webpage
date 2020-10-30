@@ -1,27 +1,68 @@
-import React from "react";
+import React, {useState} from "react";
 import { setUpvote, removeUpvote } from "../../Action/Actions";
-import { useDispatch } from "react-redux";
 import { Dispatch } from "redux";
+import { useDispatch, useSelector } from "react-redux";
+import { RootStore } from "../../store";
+
+import axios from 'axios'
 
 
 interface iRating{
-    id: string | number
+    title: string,
+    upvote: number,
 }
 
 
 export default function Rating(props: iRating){
-    const id = props.id;
-
+    const [title, setTitle] = useState(props.title)
     const dispatch: Dispatch<any> = useDispatch();
 
-    const addUpvote = (action:any) => dispatch(action(id))
-    const deleteUpvote = (action:any) => dispatch(action(id))
+    const [ranking, setRanking] = useState(props.upvote);
+    const [vote, setVote] = useState(0);
+
+    const changeUpvote = (action: string )=> {
+        if(action === "setUpvote"){
+            if (vote == 1){
+                console.log("already upvoted")
+            }else{
+                setVote(1)
+                console.log(title)
+                console.log("start opp" + ranking)
+
+                axios.put(`http://localhost:4000/api/upVote/${title}`)
+
+                const newRate = ranking + 1;
+                setRanking(newRate);
+
+                console.log("slutt opp" + ranking)
+
+            }
+
+        }else{
+            if (vote == -1){
+                console.log("already down voted")
+            }else{
+                setVote(-1)
+                console.log("start ned" + ranking)
+                axios.put(`http://localhost:4000/api/downVote/${title}`)
+                
+                const newRate = ranking -1;
+                setRanking(newRate)
+                console.log("slutt ned" + ranking)
+            }
+
+
+        }
+    }
+
+
 
     return(
         
         <div>
-            <button onClick = {() => addUpvote(setUpvote)}>Upvote</button>
-            <button onClick = {() => deleteUpvote(removeUpvote)}>Down vote</button>
+            <button onClick = {() => changeUpvote("setUpvote")}>Upvote</button>
+            <button onClick = {() => changeUpvote("removeUpvote")}>Down vote</button>
+            <p>Movie rating: {props.upvote}</p>
         </div>
 
     )

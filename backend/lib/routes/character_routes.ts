@@ -1,6 +1,7 @@
 
 import { Application, Request, Response } from 'express';
 import { CharacterController } from '../controllers/characterControllers';
+import movie from "../modules/harryPotter/schema";
 
 export class CharacterRoutes {
 
@@ -12,12 +13,15 @@ export class CharacterRoutes {
             this.character_controller.get_movie(req, res);
         })
 
-        app.put("/api/movie", (req: Request, res: Response) => {
-            this.character_controller.save_rating(req, res);
+        app.put("/api/upVote/:title", (req: Request, res: Response) => {
+            this.character_controller.up_rating(req, res)
+            
         })
 
-        app.get("/api/search/:title", (req: Request, res: Response) => {
-            this.character_controller.get_movie_search(req, res);
+        app.put("/api/downVote/:title", (req: Request, res: Response) => {
+
+            this.character_controller.down_rating(req, res)
         })
+
     }
 }

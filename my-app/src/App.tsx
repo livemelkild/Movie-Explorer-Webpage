@@ -1,4 +1,3 @@
-import Connection from "./database_connection/connection"
 import React, {useState, Component, useEffect} from 'react';
 import SearchBar from "./Components/Search/SearchBar";
 import SearchSort from "./Components/Search/SearchSort";
