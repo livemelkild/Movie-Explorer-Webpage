@@ -20,7 +20,7 @@ export default function pageReducer(state: PageState = initialState, action: {ty
                     page: state.page - 1
                 }
             case RESET_PAGE:
-                return{
+                return{ 
                     page: 0
                 }
             default:

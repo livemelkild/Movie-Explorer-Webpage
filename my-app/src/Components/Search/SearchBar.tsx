@@ -19,10 +19,10 @@ export const SearchBar = () => {
 
     return (
         <div className= "total">
-            <button onClick = {handleSubmit}  >
+            <button className='buttonSubmit' onClick = {handleSubmit}  >
                 submit
             </button>
-            <input type="search" onChange={handleChange} placeholder="Søk på filmer du leter etter" name="search"></input>
+            <input className='searchField' type="search" onChange={handleChange} placeholder="Søk på filmer du leter etter" name="search"></input>
         </div>
         )
 }
