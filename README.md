@@ -1,25 +1,43 @@
-**Løsning** <br/>
-Vi har valgt å lage en nettside der man kan få opp 62 058 filmer. 
-Nettsiden har en startside som presenterer temaet.
+# Movie Explorer 
+
+
+## Løsning 
+<br/>
+Movie Explorer er en nettside hvor brukeren kan søke etter 
+filmer i en database med 62 058 forskjellige filmer. 
+Nettsiden har en startside som presenterer temaet. 
+Search-knappen tar brukeren videre til hovedsiden hvor 
+han/hun får opp forskjellige filmer hentet fra databasen. 
+Brukeren kan navigere seg gjennom flere filmer ved å bruke knappene “next” og 
+“prev” nederst på siden. 
+
+<br />
+
+
 <br/>
 ![alt text](startside.PNG)
 </br>
-Når man kommer inn på hovedsiden lastes filmene i 
-tilfeldig rekkefølge og man kan navigere seg mellom sider og komme tilbake til startside med knappene 
-nederst. 
+I søkefeltet kan brukeren søke på enkelte filmer med små og store bokstaver, 
+eller deler av en tittel som vil liste opp alle filmer som inneholder denne 
+strengen. Etter at søket er utført kan brukeren sortere filmene etter utgivelsesår. 
+Her har vi observert at noen filmer ikke har en verdi for utgivelsesår. 
+Vi vurderte om de skulle filtreres bort, men valgt heller å ha dem der 
+ettersom vi ikke ville fjerne noe av innholdet som brukeren ønsker å se. 
+Brukeren kan filtrere filmene etter sjangere.
+
+<lu />
+
+ Ved å trykke på info-knappen blir mer informasjon om filmen vist.
+ Her kan brukeren også up- og down-vote filmene. Rangeringen 
+ blir lagret i databasen, dermed er verdien den sammenlagte 
+ rangeringen av alle brukere. Brukeren har kun muligheten til å up- 
+ eller down-vote en film én gang.
+
 </br>
 ![alt text](forside.PNG)
 ![alt text](nede_side.PNG)
 </br>
-I søkefeltet kan man søke på enkelte filmer med små og store bokstaver, eller deler av en tittel 
-som lister opp alle filmer som inneholder denne strengen. Etter at søket er utført kan man sortere filmene 
-etter utgivelsesår. Her har vi observert at noen filmer ikke har en verdi for utgivelsesår. Vi vurderte om 
-de skulle filtreres bort, men valgt heller å ha dem der ettersom vi ikke ville fjerne noe av innholdet som 
-brukeren ønsker å se. For filtrering har vi valgt ut noen av de vanligste sjangrene. Alle filmene som inneholder 
-denne sjangeren blir listet opp ved filtreringen. Dersom man ønsker mer informasjon om en film kan dette sees ved 
-å trykke på “info”-knappen for hver film. På nettsiden har man også mulighet til å up- og down vote filmene. Dette 
-blir lagret i databasen, så ratingen som står på siden er sammenlagt fra alle brukerne. Man har kun muligheten til å
-up- eller down vote en film én gang.
+
 </br>
 ![alt text](søk.PNG)
 
