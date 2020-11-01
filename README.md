@@ -1,7 +1,6 @@
 # Movie Explorer 
 
 
-## Løsning 
 <br/>
 Movie Explorer er en nettside hvor brukeren kan søke etter 
 filmer i en database med 62 058 forskjellige filmer. 
