@@ -45,7 +45,7 @@ klon prosjektet med SSH/HTTP nøkkel
 Gå inn i prosjekt-3->my-app. Skriv npm install
 Man må kjøre backend og frontend separat:
 Backend: 
-	cd backend
+### 'cd backend'
 	npm run dev
 frontend:
 	cd my-app
