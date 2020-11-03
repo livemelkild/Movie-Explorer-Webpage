@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+       "module": "CommonJS",
+       "moduleResolution": "node",
+       "pretty": true,
+       "target": "ES2018",
+       "outDir": "./dist",
+       "baseUrl": "./lib",
+       "allowSyntheticDefaultImports": true
+    },
+    "include": [
+       "lib/**/*.ts"
+    ],
+    "exclude": [
+       "node_modules"
+    ]
+ }
