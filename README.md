@@ -40,16 +40,21 @@ Brukeren kan filtrere filmene etter sjangere.
 
 ![Skjermbilde_2020-11-01_kl._17.23.23](/uploads/2e6230fa27d77bbe3bd04760f12d1d35/Skjermbilde_2020-11-01_kl._17.23.23.png)
 
-### Oppsett av prosjektet<br/>
-klon prosjektet med SSH/HTTP nøkkel 
-Gå inn i prosjekt-3->my-app. Skriv npm install
-Man må kjøre backend og frontend separat:
-Backend: 
-### 'cd backend'
-	npm run dev
-frontend:
-	cd my-app
-	npm start
+## Oppsett av prosjektet<br/>
+klon prosjektet med SSH/HTTP nøkkel <br/>
+<br/>
+Gå inn i 
+### `prosjekt-3->my-app`
+
+I prosjekt directorien skriver du
+### `npm install`
+Man må kjøre backend og frontend separat <br/>
+#### Backend: 
+### `cd backend`
+### `npm run dev`
+#### Frontend:
+### `cd my-app`
+### `npm start`
 
 # Backend
 Da vi skulle velge backend teknologi tok vi utgangspunkt i det medlemmene av gruppa hadde vært innom i Programvareutvikling. Dermed sto vi mellom SQLite og MongoDB. 
