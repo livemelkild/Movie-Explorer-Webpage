@@ -25,7 +25,7 @@ function NextPage() {
 
 
 
-    const [items, setItems] = useState();
+    const [items, setItems] = useState<any[]>([]); 
     
     useEffect(() => {
     fetch(`http://localhost:4000/api/movie?page=${page}&search=${searchState}&filter=${filter}&order=${order}`)
