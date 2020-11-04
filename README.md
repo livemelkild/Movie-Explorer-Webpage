@@ -1,5 +1,3 @@
-# Movie Explorer 
-
 ## Oppsett av prosjektet<br/>
 klon prosjektet med SSH/HTTP nøkkel <br/>
 <br/>
@@ -29,7 +27,7 @@ For å kjøre testene skriver du:
 ### `cd my-app`
 ### `npm test`
 
-
+# Movie Explorer 
 <br/>
 Movie Explorer er en nettside hvor brukeren kan søke etter 
 filmer i en database med 62 058 forskjellige filmer. 
