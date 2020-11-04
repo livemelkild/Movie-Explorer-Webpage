@@ -1,5 +1,34 @@
 # Movie Explorer 
 
+## Oppsett av prosjektet<br/>
+klon prosjektet med SSH/HTTP nøkkel <br/>
+<br/>
+Gå inn i 
+### `prosjekt-3->my-app`
+
+I prosjekt directorien skriver du
+### `npm install`
+Man må kjøre backend og frontend separat <br/>
+#### Backend: 
+### `cd backend`
+### `npm run dev`
+#### Frontend:
+### `cd my-app`
+### `npm start`
+
+## Kjøring av tester<br/>
+#### End-2-End
+Viktig å være i prosjekt-3 directorien (ikke i my-app eller backend)<br/>
+Installering av cypress:
+### `npm install cypress --save-dev`
+For å kjøre testene skriver du:
+### `./node_modules/.bin/cypress open`
+
+
+#### Enhetstesting (Jest og snapshot)<br/>
+### `cd my-app`
+### `npm test`
+
 
 <br/>
 Movie Explorer er en nettside hvor brukeren kan søke etter 
@@ -40,34 +69,6 @@ Brukeren kan filtrere filmene etter sjangere.
 
 ![Skjermbilde_2020-11-01_kl._17.23.23](/uploads/2e6230fa27d77bbe3bd04760f12d1d35/Skjermbilde_2020-11-01_kl._17.23.23.png)
 
-## Oppsett av prosjektet<br/>
-klon prosjektet med SSH/HTTP nøkkel <br/>
-<br/>
-Gå inn i 
-### `prosjekt-3->my-app`
-
-I prosjekt directorien skriver du
-### `npm install`
-Man må kjøre backend og frontend separat <br/>
-#### Backend: 
-### `cd backend`
-### `npm run dev`
-#### Frontend:
-### `cd my-app`
-### `npm start`
-
-## Kjøring av tester<br/>
-#### End-2-End
-Viktig å være i prosjekt-3 directorien (ikke i my-app eller backend)<br/>
-Installering av cypress:
-### `npm install cypress --save-dev`
-For å kjøre testene skriver du:
-### `./node_modules/.bin/cypress open`
-
-
-#### Enhetstesting (Jest og snapshot)<br/>
-### `cd my-app`
-### `npm test`
 
 
 # Backend
