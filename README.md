@@ -86,7 +86,9 @@ Vi har tatt i brukt https://materializecss.com/ som tredjepartskomponent for at 
 
 # Testing <br/>
 ### End-2-End
-I vårt prosjekt har vi brukt cypress for å vise at vi behersker grunnleggende automatisert end-2-end testing. Vi har laget tester som skal sjekke om søket brukeren gjør er gyldig, og om søkefunksjonen dukker opp på webapplikasjonen sin side. Automatiserte cypress tester som interagerer med siden sammenlignet med mennesker som interagerer med siden er veldig likt. Dette er grunnen til at vi har valgt nettopp denne løsningen. 
+I vårt prosjekt har vi brukt cypress for å vise at vi behersker grunnleggende automatisert end-2-end testing. Vi har laget tester som skal teste ulike situasjoner en bruker kan havne i. Disse testene er beskrevet i bildene under. 
+Hensikten med disse cypresstestene er at de fungerer på samme måte som et menneske som interagerer med siden, og derfor er det grunnen til at vi valgte denne løsningen. 
+
 For å kjøre disse testene må du….<br/>
 x<br/>
 (Screen av approved tester)<br/>
@@ -96,7 +98,8 @@ x<br/>
 Gruppen har skrevet ulike former for enhetstester, hvor vi da har skrevet snapshots og brukt jest. Vi har skrevet enhetstester som tester et komponent for å unngå 
 For å kjøre disse testene så må du...<br/>
 x<br/>
-(screen av gjennomført test)<br/>
+[Screenshot 2020-11-04 at 07.55.22](url)
+<br/>
 x<br/>
 
 
