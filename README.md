@@ -106,11 +106,11 @@ Hensikten med disse cypresstestene er at de fungerer på samme måte som et menn
 For å kjøre disse testene må du skrive følgende inn i terminale: ./node_modules/.bin/cypress open. Da vil Cypress åpne i en ny fane, 
 og testene vil kjøre som vist under.<br/>
 <br/>
-![Screenshot 2020-11-04 at 07.55.22](url)
+![Screenshot 2020-11-04 at 07.55.22](Screenshot_2020-11-04_at_07.55.22.png)
 <br/>
-![Screenshot 2020-11-04 at 08.07.11](url)
+![Screenshot 2020-11-04 at 08.07.11](Screenshot_2020-11-04_at_08.07.11.png)
 <br/>
-![Screenshot 2020-11-04 at 08.08.06](url)
+![Screenshot 2020-11-04 at 08.08.06](Screenshot_2020-11-04_at_08.08.06.png)
 <br/>
 
 ### Enhetstesting (Jest og snapshot)<br/>
