@@ -89,18 +89,19 @@ Vi har tatt i brukt https://materializecss.com/ som tredjepartskomponent for at 
 I vårt prosjekt har vi brukt cypress for å vise at vi behersker grunnleggende automatisert end-2-end testing. Vi har laget tester som skal teste ulike situasjoner en bruker kan havne i. Disse testene er beskrevet i bildene under. 
 Hensikten med disse cypresstestene er at de fungerer på samme måte som et menneske som interagerer med siden, og derfor er det grunnen til at vi valgte denne løsningen. 
 
-For å kjøre disse testene må du….<br/>
-x<br/>
-(Screen av approved tester)<br/>
-x<br/>
+For å kjøre disse testene må du skrive følgende inn i terminale: ./node_modules/.bin/cypress open. Da vil Cypress åpne i en ny fane, 
+og testene vil kjøre som vist under.<br/>
+<br/>
+![Screenshot 2020-11-04 at 07.55.22](url)
+<br/>
+![Screenshot 2020-11-04 at 08.07.11](url)
+<br/>
+![Screenshot 2020-11-04 at 08.08.06](url)
+<br/>
 
 ### Enhetstesting (Jest og snapshot og Mocha)<br/>
 Gruppen har skrevet ulike former for enhetstester, hvor vi da har skrevet snapshots og brukt jest. Vi har skrevet enhetstester som tester et komponent for å unngå 
 For å kjøre disse testene så må du...<br/>
-x<br/>
-[Screenshot 2020-11-04 at 07.55.22](url)
-<br/>
-x<br/>
 
 
 # Git<br/>
