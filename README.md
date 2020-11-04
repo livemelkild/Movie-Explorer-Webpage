@@ -108,9 +108,15 @@ og testene vil kjøre som vist under.<br/>
 <br/>
 ![Screenshot 2020-11-04 at 07.55.22](Screenshot_2020-11-04_at_07.55.22.png)
 <br/>
+*Testing that searching for a moviename that several movies have. Chooses to filter the search from new-old*
+<br/>
 ![Screenshot 2020-11-04 at 08.07.11](Screenshot_2020-11-04_at_08.07.11.png)
 <br/>
+*Testing that the ratingbutton works for rating a movie*
+<br/>
 ![Screenshot 2020-11-04 at 08.08.06](Screenshot_2020-11-04_at_08.08.06.png)
+<br/>
+*Testing that searching for something in the database and finds the searched movie*
 <br/>
 
 ### Enhetstesting (Jest og snapshot)<br/>
