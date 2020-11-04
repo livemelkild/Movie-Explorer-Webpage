@@ -58,8 +58,10 @@ Man må kjøre backend og frontend separat <br/>
 
 ## Kjøring av tester<br/>
 #### End-2-End
-Viktig å være i prosjekt-3 directorien (ikke i my-app eller backend)
+Viktig å være i prosjekt-3 directorien (ikke i my-app eller backend)<br/>
+Installering av cypress:
 ### `npm install cypress --save-dev`
+For å kjøre testene skriver du:
 ### `./node_modules/.bin/cypress open`
 
 
