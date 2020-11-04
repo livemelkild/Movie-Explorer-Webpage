@@ -56,6 +56,18 @@ Man må kjøre backend og frontend separat <br/>
 ### `cd my-app`
 ### `npm start`
 
+## Kjøring av tester<br/>
+#### End-2-End
+Viktig å være i prosjekt-3 directorien (ikke i my-app eller backend)
+### `npm install cypress --save-dev`
+### `./node_modules/.bin/cypress open`
+
+
+#### Enhetstesting (Jest og snapshot)<br/>
+### `cd my-app`
+### `npm test`
+
+
 # Backend
 Da vi skulle velge backend teknologi tok vi utgangspunkt i det medlemmene av gruppa hadde vært innom i Programvareutvikling. Dermed sto vi mellom SQLite og MongoDB. 
 Etter å ha undersøkt dette fant vi ut at MongoDB ville være mest hensiktsmessig for gruppen. Fordi  MongoDB er en database som ikke har like mange begrensninger som MySQL. Det gjelder begrensninger som omhandler databaseskjema og datamodellering som kan senke utviklingen. Dette er en av grunnene til at gruppen valgte å bruke mongoDB, samt at databasen er skalerbar og kan dermed ta i mot datasett, fremfor at man må legge inn data manuelt.<br/>
@@ -99,7 +111,7 @@ og testene vil kjøre som vist under.<br/>
 ![Screenshot 2020-11-04 at 08.08.06](url)
 <br/>
 
-### Enhetstesting (Jest og snapshot og Mocha)<br/>
+### Enhetstesting (Jest og snapshot)<br/>
 Gruppen har skrevet ulike former for enhetstester, hvor vi da har skrevet snapshots og brukt jest. Vi har skrevet enhetstester som tester et komponent for å unngå 
 For å kjøre disse testene så må du...<br/>
 
