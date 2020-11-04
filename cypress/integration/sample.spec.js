@@ -35,7 +35,7 @@ describe('Testing that the ratingbutton works for rating a movie', function() {
         cy.get('#submitKnapp').click({force:true})
         cy.get('#kort').contains('Info').click({force:true})
         cy.get('#kort').contains('Info').click({force:true}) 
-        cy.get('#dislike').click({force:true})
+        cy.get('#like').click({force:true})
         cy.get('#kort').contains('Last Christmas')
         //4cy.get('#dislike').click({force:true})
         
