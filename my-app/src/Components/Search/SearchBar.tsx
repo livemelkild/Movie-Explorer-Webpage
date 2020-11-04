@@ -24,8 +24,8 @@ export const SearchBar = () => {
     return (
         <div className= "total">
             <div className="submit">
-            <input type="search" onChange={handleChange} placeholder="Søk på filmer du leter etter" name="search"></input>
-            <button className="waves-effect btn  blue darken-1" type="submit" name="action" onClick = {() => handleSubmit()}>
+            <input id= "searchField" type="search" onChange={handleChange} placeholder="Søk på filmer du leter etter" name="search"></input>
+            <button id = "submitKnapp" className="waves-effect btn  blue darken-1" type="submit" name="action" onClick = {() => handleSubmit()}>
                 submit
                 <i className="material-icons right">send</i>
             </button>

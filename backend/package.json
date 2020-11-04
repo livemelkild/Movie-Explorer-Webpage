@@ -6,7 +6,8 @@
   "scripts": {
     "test": "ts-node ./lib/server.ts",
     "dev": "tsc && nodemon ./dist/server.js",
-    "prod": "tsc && nodemon ./dist/server.js"
+    "prod": "tsc && nodemon ./dist/server.js",
+    "start": "nodemon app.js"
   },
   "author": "",
   "license": "ISC",

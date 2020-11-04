@@ -15,12 +15,12 @@ export const SearchSort = () => {
 
  
     return (
-            <div>
+            <div >
                 {options ?
                     <div className = "sort">
-                        <button className="waves-effect btn deep-purple accent-1" type="submit" name="action" onClick={() => setOptions(false) }>Hide filter</button>
+                        <button  className="waves-effect btn deep-purple accent-1" type="submit" name="action" onClick={() => setOptions(false) }>Hide filter</button>
                     <p>Sort</p>
-                        <button className="waves-effect btn" type="submit" name="action" onClick={() => callSortFunction(yearAsk)}>New - Old</button>
+                        <button id="newKnapp" className="waves-effect btn" type="submit" name="action" onClick={() => callSortFunction(yearAsk)}>New - Old</button>
                         <button className="waves-effect btn" type="submit" name="action" onClick={() => callSortFunction(yearDesc)}>Old - New</button>
                         <button className="waves-effect btn" type="submit" name="action" onClick={() => callSortFunction(yearReset)}>Unorderd</button>
 
@@ -36,7 +36,7 @@ export const SearchSort = () => {
                 :
                     <div>
                     
-                    <button className="waves-effect btn deep-purple accent-1" type="submit" name="action" onClick={() => setOptions(true)}>Show filter</button>
+                    <button id="sortKnapp" className="waves-effect btn deep-purple accent-1" type="submit" name="action" onClick={() => setOptions(true)}>Show filter</button>
                 </div> }
         </div>
         )

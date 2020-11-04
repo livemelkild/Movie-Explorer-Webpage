@@ -24,7 +24,7 @@ for(i = 0; i  < props.genre.length ; i++){
 }
 
     return(
-
+      <div id = "kort">
       <div className="card  light-blue darken-1">
       <div className="card-image waves-effect waves-block waves-light">
         <img className="activator" src= {props.img_url} />
@@ -49,7 +49,7 @@ for(i = 0; i  < props.genre.length ; i++){
             </div></p>
       </div>
     </div>
-    
+    </div>
     )
 }
 
