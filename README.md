@@ -120,8 +120,8 @@ og testene vil kjøre som vist under.<br/>
 <br/>
 
 ### Enhetstesting (Jest og snapshot)<br/>
-Gruppen har skrevet ulike former for enhetstester, hvor vi da har skrevet snapshots og brukt jest. Vi har skrevet enhetstester som tester et komponent for å unngå 
-For å kjøre disse testene så må du...<br/>
+Gruppen har skrevet ulike former for enhetstester, hvor vi da har skrevet snapshots og brukt jest. Vi har skrevet enhetstester som tester et komponent for å sjekke at de komponentene fungerer som de skal. Vi har testet to komponenter, nemlig startpage og app.
+<br/>
 
 
 # Git<br/>
