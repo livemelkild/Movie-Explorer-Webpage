@@ -52,7 +52,6 @@ describe('Testing that searching for a moviename that several movies have. Choos
         cy.get('#submitKnapp').click({force:true})
         cy.get('#kort').contains('Info').click({force:true})
         cy.get('#kort').contains('Info').click({force:true}) 
-        cy.get('#kort').contains('Love')
         
         
     }); 
