@@ -7,7 +7,7 @@
     "test": "ts-node ./lib/server.ts",
     "dev": "tsc && nodemon ./dist/server.js",
     "prod": "tsc && nodemon ./dist/server.js",
-    "start": "nodemon app.js"
+    "start": "nodemon app.ts"
   },
   "author": "",
   "license": "ISC",
@@ -18,7 +18,7 @@
     "express": "^4.17.1",
     "mongoose": "^5.10.9",
     "mongoose-paginate": "^5.0.3",
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.6"
   },
   "devDependencies": {
     "@types/cors": "^2.8.8"
