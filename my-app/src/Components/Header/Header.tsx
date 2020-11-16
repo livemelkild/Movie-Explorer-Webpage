@@ -14,13 +14,15 @@ const Header = (porps: PropsType) => {
             <div className="nav-wrapper  b light-blue darken-3">
             <header className="App-header" >
             <a href="#!" className="brand-logo center">{porps.text}</a>
-            <Link className = "back_link" to="/">
+            <Lin k className = "back_link" to="/">
             <button className="waves-effect btn light-blue darken-3" type="submit" name="action" > HOME</button>
         </Link>
             </header>
             </div>
         </nav>
     )
+
+    //Implementer button fra react native element
 
 }
 
