@@ -13,7 +13,7 @@ Brukeren kan navigere seg gjennom flere filmer ved å bruke knappene “next” 
 
 
 <br/>
-![Skjermbilde_2020-11-01_kl._17.14.50](/uploads/7168dc1d4ab23622a471b83089bd8e24/Skjermbilde_2020-11-01_kl._17.14.50.png)
+<img width="885" src="https://user-images.githubusercontent.com/69898083/99156995-ca565380-26c5-11eb-8655-9c33ab4661db.png">
 </br>
 I søkefeltet kan brukeren søke på enkelte filmer med små og store bokstaver, 
 eller deler av en tittel som vil liste opp alle filmer som inneholder denne 
@@ -32,12 +32,15 @@ Brukeren kan filtrere filmene etter sjangere.
  eller down-vote en film én gang.
 
 </br>
-![Skjermbilde_2020-11-01_kl._17.22.16](/uploads/37c113800f1f11e9651bba22d45dcd4b/Skjermbilde_2020-11-01_kl._17.22.16.png)
-![alt text](nede_side.PNG)
+<img width="886" src="https://user-images.githubusercontent.com/69898083/99157039-1dc8a180-26c6-11eb-800b-18a6fd7295fa.png">
+<img width="888" alt =""src="https://user-images.githubusercontent.com/69898083/99157054-3f298d80-26c6-11eb-8268-14db30b88b68.png">
+
+
 
 *Her er det søkt på Harry Potter og sortert på utgivelsesår:*
 
-![Skjermbilde_2020-11-01_kl._17.23.23](/uploads/2e6230fa27d77bbe3bd04760f12d1d35/Skjermbilde_2020-11-01_kl._17.23.23.png)
+<img width="890" src="https://user-images.githubusercontent.com/69898083/99157073-55cfe480-26c6-11eb-9f4a-7251549264da.png">
+
 
 
 
@@ -45,7 +48,8 @@ Brukeren kan filtrere filmene etter sjangere.
 Da vi skulle velge backend teknologi tok vi utgangspunkt i det medlemmene av gruppa hadde vært innom i Programvareutvikling. Dermed sto vi mellom SQLite og MongoDB. 
 Etter å ha undersøkt dette fant vi ut at MongoDB ville være mest hensiktsmessig for gruppen. Fordi  MongoDB er en database som ikke har like mange begrensninger som MySQL. Det gjelder begrensninger som omhandler databaseskjema og datamodellering som kan senke utviklingen. Dette er en av grunnene til at gruppen valgte å bruke mongoDB, samt at databasen er skalerbar og kan dermed ta i mot datasett, fremfor at man må legge inn data manuelt.<br/>
 
-![alt text](backend.PNG)
+<img width="872" alt="Skjermbilde 2020-11-14 kl  22 13 10" src="https://user-images.githubusercontent.com/69898083/99157107-97608f80-26c6-11eb-9137-2defadb15104.png">
+
 
 ## API<br/>
 Ved valg av API gjorde vi en vurdering der vi landet på REST api. Hovedforskjellen er et GraphQL bare har et endepunkt, mens REST api har flere. Med GraphQL kan man spesifisere hvilke felt med informasjon man vil hente fra databasen. REST api har flere endepunkter. RESTapi er den mest brukte i dag, dette anså vi som en stor fordel ettersom det er god dokumentasjon og gode guider på hvordan vi kan sette det opp. Det er essensielt for oss ettersom ingen har satt opp en API kobling før. Vi implementerte RESTapi sammen med node.js, express og mongoose. 
@@ -63,7 +67,8 @@ Prosjektet er basert på React og har blitt initialisert med create-react-app.
 ### Redux <br/>
 Vi valgte å benytte redux for state management. Til mindre prosjekter var det flere guider og videoer som anbefalte MobX, til tross for dette valgte vi Redux. Vi ønsket å lære Redux ettersom det er mye brukt og for oss er hensikten med faget å få størst mulig læringsutbytte. I tillegg er Redux godt dokumentert som gjør det enklere å lære seg det. Redux viste seg å være et nyttig verktøy, men det var komplisert og komplekst å forstå i starten.
 Redux lagrer staten til et objekt og gjør det mulig å aksessere denne uavhengig av hvor staten ble endret. Dette er mulig ettersom alle endringer blir lagret som action som vi har i “..Action/Actions.tsx”. Hver action som er en mulig endring for en hendelse er samlet i en egen reducer i “..Reducer/…”. Reduceren spesifiserer hvilke endringer som kan inntreffe, og gjør staten forutsigbar som er en viktig fordel med Redux. For å aksessere action sin verdi er det koblet inn en store der man kan hente verdien og endre verdien til action.
-![123137143_407508870253003_8762547716286227337_n](/uploads/e93e97a2ece7c4ce0db47e5bc49394b0/123137143_407508870253003_8762547716286227337_n.jpg)
+<img width="400" alt="Skjermbilde 2020-11-14 kl  22 13 41" src="https://user-images.githubusercontent.com/69898083/99157119-a9dac900-26c6-11eb-8840-9a7ff10ae9de.png">
+
 ### Materialize <br/>
 Vi har tatt i brukt https://materializecss.com/ som tredjepartskomponent for at layoutet til siden skulle bli enklere å utforme. Det har hjulpet mye for at frontend-utseendet ikke tok for mye tid å utforme.
 
@@ -77,15 +82,17 @@ Hensikten med disse cypresstestene er at de fungerer på samme måte som et menn
 For å kjøre disse testene må du skrive følgende inn i terminale: ./node_modules/.bin/cypress open. Da vil Cypress åpne i en ny fane, 
 og testene vil kjøre som vist under.<br/>
 <br/>
-![Screenshot 2020-11-04 at 07.55.22](Screenshot_2020-11-04_at_07.55.22.png)
+<img width="892" alt="Skjermbilde 2020-11-14 kl  22 14 48" src="https://user-images.githubusercontent.com/69898083/99157134-d2fb5980-26c6-11eb-9de3-562685cb8903.png">
+
 <br/>
 *Testing that searching for a moviename that several movies have. Chooses to filter the search from new-old*
 <br/>
-![Screenshot 2020-11-04 at 08.07.11](Screenshot_2020-11-04_at_08.07.11.png)
+<img width="884" alt="Skjermbilde 2020-11-14 kl  22 15 05" src="https://user-images.githubusercontent.com/69898083/99157139-dabafe00-26c6-11eb-8e45-7750e27c749c.png">
+
 <br/>
 *Testing that the ratingbutton works for rating a movie*
 <br/>
-![Screenshot 2020-11-04 at 08.08.06](Screenshot_2020-11-04_at_08.08.06.png)
+<img width="883" alt="Skjermbilde 2020-11-14 kl  22 15 16" src="https://user-images.githubusercontent.com/69898083/99157145-e1e20c00-26c6-11eb-90c7-b15c5f668224.png">
 <br/>
 *Testing that searching for something in the database and finds the searched movie*
 <br/>
@@ -98,9 +105,6 @@ Gruppen har skrevet ulike former for enhetstester, hvor vi da har skrevet snapsh
 # Git<br/>
 Vi har tatt i bruk git gjennom hele prosjektet. Prosjektplanleggingen startet med å lage en liten backlog med brukerhistoriene som skulle inngå for filtrering, søking og lagring. Deretter la vi opp issues på git. Gjennom prosjektet har vi lagt til og oppdatert issuene som er på gitLab. Gruppen har brukt issue mye mer aktivt under dette prosjektet enn forrige. Det har gjort det enklere å følge opp hverandres arbeid.
 Samarbeidet under prosjektet har fungert bra ettersom 2 personer satt seg inn i context og 1 person inn i backend og koblingene. Det ble brukt mye tid på å opparbeide seg kunnskap før logikken kunne bli implementert. Etter at begge parter hadde fått en god forståelse for sin del satt vi oss sammen og koblet sammen de forskjellige delene. Dette førte til at vi fikk til all logikken, og kunne lære av hverandre.
-
-
-# Kilder
 
 
 ## Oppsett av prosjektet<br/>
@@ -131,5 +135,4 @@ For å kjøre testene skriver du:
 #### Enhetstesting (Jest og snapshot)<br/>
 ### `cd my-app`
 ### `npm test`
-
 
